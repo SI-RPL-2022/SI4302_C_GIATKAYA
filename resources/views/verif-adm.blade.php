@@ -1,41 +1,60 @@
-<html>
-    <head>
-        <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</head>
-<body>
-<div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Nama</th>
-      <th scope="col">NIK</th>
-      <th scope="col">Jenis Kelamin</th>
-      <th scope="col">Nama Usaha</th>
-      <th scope="col">Tahun Berdiri</th>
-      <th scope="col">Email</th>
-      <th scope="col">Foto KTP</th>
+@extends('layouts.dashboard')
 
-    </tr>
-  </thead>
-  <tbody>
-    @foreach ($data_user as $key=>$row)
-    <tr>
-      <th scope="row">1</th>
-      <td>{{ $row->nama }}</td>
-      <td></td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
+@section('content')
+<h2 class="sub-header text-center" >Verifikasi Data User</h2>
+<div class="p-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Nama</th>
+        <th scope="col">NIK</th>
+        <th scope="col">Jenis Kelamin</th>
+        <th scope="col">Nama Usaha</th>
+        <th scope="col">Tahun Berdiri</th>
+        <th scope="col">Email</th>
+        <th scope="col">Foto KTP</th>
+        <th scope="col" class="text-center">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      @php
+        $i = 1;
+      @endphp
+      @foreach ($data_user as $key=>$row)
+      <tr class="">
+        <th scope="row">{{ $i }}</th>
+        <td>{{ $row->nama }}</td>
+        <td>{{ $row->nik }}</td>
+        <td>{{ $row->jenis_kelamin }}</td>
+        <td>{{ $row->Nama_Usaha }}</td>
+        <td>{{ $row->tahun_berdiri }}</td>
+        <td>{{ $row->email }}</td>
+        <td><a href="#" data-toggle="modal" data-target="#modalFoto{{ $i }}">{{ $row->foto_ktp }}</a></li></td>
+        <td class="d-grid gap-2 d-md-flex justify-content-center text-center">
+          <button class="btn btn-success me-md-2" type="button">Accept</button>
+          <button class="btn btn-danger" type="button">Decline</button>
+        </td>
+      </tr>
+
+      <div class="modal fade" id="modalFoto{{ $i }}" tabindex="-1" aria-labelledby="modalFotoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalFotoLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+      @php
+        $i++;
+      @endphp
+      @endforeach
+    </tbody>
+  </table>
 </div>
-</body>
-</html>
+@endsection
