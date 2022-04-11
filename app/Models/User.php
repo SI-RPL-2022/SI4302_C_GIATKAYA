@@ -20,18 +20,24 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'jenis kelamin',
+        'tanggal lahir',
+        'alamat',
+        'nomor hp',
+        'nik',
+        'nama usaha',
+        'bidang usaha',
+        'jumlah toko',
         'password',
+        'tahun berdiri',
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
+     *
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
 
     /**
      * The attributes that should be cast.
