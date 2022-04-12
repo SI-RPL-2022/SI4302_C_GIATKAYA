@@ -153,33 +153,6 @@
   </head>
 
   <body>
-  @if (auth()->user()->status == 'Menunggu')
-    <div class="container">
-        <div class="row justify-content-centern">
-            <div class="col-md-8">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Dashboard
-                    </div>
-                    <div class="panel-body">
-                        Akun anda belum di ACC
-                    </div>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Kembali            
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-
-  
-  @elseif (auth()->user()->status == 'user')
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -227,7 +200,10 @@
                     href=""><i class="fas fa-regular fa-user me-2"></i>&nbsp; Profile
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-                    href=""><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
+                    href=""><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href=""><i class="fa-solid fa-list-check me-2"></i>&nbsp; Validation User
                 </a>
           </ul>
           <ul class="nav nav-sidebar">
@@ -309,6 +285,119 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  @endif
   </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>GiatKaya</title>        
+
+    <link href = "{{asset('css/auth.css')}}" rel="stylesheet">   
+    <link href ="{{ asset('image/logo/tecch.png') }}" rel="shortcut icon"> 
+        
+    <script src="https://kit.fontawesome.com/f1223f01a6.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6de6e67382.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>        
+    <script src="{{ asset('js/scripts.js') }}"></script>     
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.esm.min.js" integrity="sha512-SaY95UIbYlNfmc6tZOtqEWMyDHpIKJwXCPfDZNvgudlFZiJjMU3XJNrSnkVCL/3b7szsoU3hDXpUz6+TdLY1ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    @yield('javascipt-text')
+</head>
+<body style="background-color:rgb(245,245,245);">
+    <div class="d-flex" id="wrapper"> 
+        <div class="border-end" id="sidebar-wrapper" style="background-color: rgb(255,255,255);">
+            <div class="sidebar-heading border-bottom" style="background-color: #149BFC;">
+                <a href="" class="list-group-item list-group-item-light text-center"><img src="" alt="" width="140px;" height="20px" class="img-fluid"></a>                
+            </div>
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #149BFC; color: white">MENU</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href=""><i class="fa fa-dashboard me-2"></i>Dashboard</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"                     
+                    href=""><i class="fa-solid fa-book-open-reader me-2"></i>Training Skill
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
+                    href=""><i class="fas fa-regular fa-coins me-2"></i>Pinjaman Modal <i class=""></i>
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href=""><i class="fas fa-regular fa-briefcase me-2"></i>Lapangan Kerja
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href=""><i class="fas fa-regular fa-user me-2"></i>Profile
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href=""><i class="fas fa-regular fa-file-lines me-2"></i>Certification <i class=""></i>
+                </a>
+                <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #149BFC; color: white">OTHERS</a>                
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
+                    <i class="fas fa-regular fa-address-card me-2"></i>About Us
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
+                    <i class="fas fa-regular fa-gear me-2"></i>Setting
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                </a>
+                <form id="logout-form" action="" method="POST" class="d-none">
+                    @csrf
+                </form> 
+            </div>                        
+        </div>
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background-color: rgb(255,255,255);">
+                <div class="container-fluid">
+                    <button class="btn btn-info" id="sidebarToggle">
+                        <i class="fas fa-sliders-h"></i>
+                    </button>              
+                </div>
+                <div class="container-fluid">
+                    <input type="text" placeholder="Search..">
+                    <img src="{{ asset('image/user.png') }}" alt="" height="30" class="rounded-circle me-1"><small class="text-muted">Steven</small></p>
+                </div>           
+            </nav>
+            <div class="container">
+                <p>jbdajbsdkad</p>
+            </div>
+            <footer class="text-center text-lg-start mt-auto" style="background-color:#149BFC; color:white;">    
+                <div class="container p-4">        
+                    <div class="row">            
+                        <div class="col-4 col-md-4 col-lg-4 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Navigasi</h5>
+                            <a href="" style="text-decoration:none; color:white;">Beranda</a><br>                
+                            <a href="" style="text-decoration:none; color:white;">Pinjaman Modal</a><br>         
+                            <a href="" style="text-decoration:none; color:white;">Lapangan Kerja</a><br>                
+                            <a href="" style="text-decoration:none; color:white;">Training Skill</a><br>                               
+                        </div>            
+                        <div class="col-4 col-md-4 col-lg-4 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Sosial Media</h5>
+                            <a href="" class="btn-facebook"><i class="fab fa-facebook fs-3" ></i></a>
+                            <a href="" class="btn-twitter"><i class="fab fa-twitter fs-3 ps-3"></i></a>
+                            <a href="" class="btn-instagram"><i class="fab fa-instagram fs-3 ps-3"></i></a>
+                            <a href="" class="btn-linkedin"><i class="fab fa-linkedin-in fs-3 ps-3"></i></a>
+                            <a href="" class="btn-telegram"><i class="fab fa-telegram fs-3 ps-3"></i></a>                
+                        </div>            
+                        <div class="col-4 col-md-4 col-lg-4 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Sponsor Kami</h5>                                    
+                            <img src="" class="img-fluid me-2 mb-2" width="100px">                                                        
+                            <img src="https://indonesiabutuhanakmuda.narasi.tv/logo-primary.png" class="img-fluid me-2 mb-2" width="100px">
+                            <img src="" class="img-fluid" width="150px">                     
+                        </div>            
+                    </div>        
+                </div>        
+                <div class="text-center p-3" style="color:white;">
+                    &copy; 2022 GiatKaya. All Rights Reserved         
+                </div>    
+            </footer>
+            <div style="font-size:14px;">
+            </div>            
+        </div>
+    </div>         
+</body>
+
+</html> -->
