@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Login')
 @section('content')
 <div class="container">
   <div class="row">
@@ -7,11 +7,18 @@
       <span class="fw-bold" style="margin-left:60px;">Selamat Datang di</span> <span class="fw-bold" style="color: #149BFC;">GiatKaya!</span>
       <img src="{{ asset('image/kantornew.png') }}" alt="">
     </div>
-    <div class="col-sm-7 shadow p-3 mb-5 bg-body" style="border :2px solid #11CDEF; height:450px; border-radius: 15px; margin-top: 120px;">
+    <div class="col-sm-7 shadow p-3 mb-5 bg-body" style="border :2px solid #11CDEF; height: 500px; border-radius: 15px; margin-top: 120px;">
       <div class="row" style="margin-left: 100px;">
-        <h4 style="margin-top: 85px;">Login sebagai rakyat GiatKaya!</h4>
+        <h4 class="fw-bold" style="margin-top: 80px;">Login sebagai rakyat GiatKaya!</h4>
         <p><small class="text-muted">Belum memiliki akun GiatKaya? <span class="fw-bold" style="color: #149BFC;"> <a href="{{('/register')}}">Daftar di sini! </a></span></small></p>
         <div class="col-12 col-md-12 col-lg-7">
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <h6 style="font-size:12px;"><i class="icon fas fa-times"></i> Gagal!</h6>
+                    <div style="font-size:11px;">{{ session('error') }}</div>                  
+                </div>                                                            
+            @endif
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-floating mb-3">

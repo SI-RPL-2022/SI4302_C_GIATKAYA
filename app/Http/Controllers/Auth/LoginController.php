@@ -52,7 +52,7 @@ class LoginController extends Controller
                 return redirect()->route('masyarakat.home');
             }
         }else{
-            return redirect()->route('login')->with('error', 'Email Dan Password Salah');
+            return redirect()->route('login')->with('error', 'Email address atau Password Salah');
         }
 
     }

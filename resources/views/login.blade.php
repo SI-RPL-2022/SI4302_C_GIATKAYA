@@ -30,7 +30,15 @@
         <h4 style="margin-top: 85px;">Login sebagai rakyat GiatKaya!</h4>
         <p><small class="text-muted">Belum memiliki akun GiatKaya? <span class="fw-bold" style="color: #149BFC;"> <a href="/regis">Daftar di sini! </a></span></small></p>
         <div class="col-12 col-md-12 col-lg-7">
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <h6 style="font-size:12px;"><i class="icon fas fa-times"></i> Gagal!</h6>
+                    <div style="font-size:11px;">{{ session('error') }}</div>
+                </div>                                                            
+            @endif
             <form>
+                @csrf
                 <div class="form-floating mb-3">
                     <input type="text" style="border-bottom:2px solid #11CDEF" class="form-control form-control-sm border-top-0 border-end-0 border-start-0" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Email address</label>
