@@ -11,13 +11,12 @@
       <div class="row" style="margin-left: 100px;">
         <h4 class="fw-bold" style="margin-top: 80px;">Login sebagai rakyat GiatKaya!</h4>
         <p><small class="text-muted">Belum memiliki akun GiatKaya? <span class="fw-bold" style="color: #149BFC;"> <a href="{{('/register')}}">Daftar di sini! </a></span></small></p>
-        <div class="col-12 col-md-12 col-lg-7">
+        <div class="col-12 col-md-12 col-lg-8">
             @if (session('error'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <h6 style="font-size:12px;"><i class="icon fas fa-times"></i> Gagal!</h6>
-                    <div style="font-size:11px;">{{ session('error') }}</div>                  
-                </div>                                                            
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div style="font-size:15px;">{{ session('error') }}</div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>                                                    
             @endif
             <form method="POST" action="{{ route('login') }}">
                 @csrf

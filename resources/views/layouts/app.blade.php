@@ -87,11 +87,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href = "{{asset('css/auth.css')}}" rel="stylesheet">
 </head>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light shadow-sm" style="background-color: #e3f2fd;">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">GiatKaya!</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="nav bar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -138,7 +138,7 @@
     </div>
   </div>
 </nav>
-<div class="mt-5"></div>
+<div style="margin-top:70px;"></div>
 @yield('content')
 
     </div>

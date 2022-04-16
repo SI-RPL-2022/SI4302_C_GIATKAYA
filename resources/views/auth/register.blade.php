@@ -5,8 +5,8 @@
   <div class="row">
     <div class="col-sm-5 mt-5">
         <div class="container">
-            <span class="fw-bold" style="margin-left: 50px;">Selamat Datang di</span> <span class="fw-bold" style="color: #149BFC;">GiatKaya!</span>
-            <img src="{{ asset('image/kantornew.png') }}" alt="">
+            <span class="fw-bold" style="margin-left: 60px;">Selamat Datang di</span> <span class="fw-bold" style="color: #149BFC;">GiatKaya!</span>
+            <img src="{{ asset('image/kantornew.png') }}" width="100%" alt="">
         </div>
       
     </div>

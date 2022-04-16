@@ -5,52 +5,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
     <title>Dashboard</title>
 
-    <!-- Bootstrap core CSS -->
+  
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/6de6e67382.js" crossorigin="anonymous"></script>
-    <!-- Custom styles for this template -->
+    
     <style>
-        /*
-        * Base structure
-        */
 
-        /* Move down content because we have a fixed navbar that is 50px tall */
         body {
             padding-top: 50px;
         }
 
 
-        /*
-        * Global add-ons
-        */
 
         .sub-header {
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
         }
 
-        /*
-        * Top navigation
-        * Hide default border to remove 1px line.
-        */
+
         .navbar-fixed-top {
             border: 0;
             color: #fff;
             background-color: #11CDEF;
         }
 
-        /*
-        * Sidebar
-        */
-
-        /* Hide for mobile, show later */
         .sidebar {
             
         }
@@ -64,7 +49,7 @@
                 display: block;
                 padding: 15px;
                 overflow-x: auto;
-                overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+                overflow-y: auto;
                 background-color: #f5f5f5;
                 border-right: 1px solid #eee;
                 width: 240px;
@@ -72,9 +57,9 @@
             }
         }
 
-        /* Sidebar navigation */
+
         .nav-sidebar {
-            margin-right: -21px; /* 20px padding + 1px border */
+            margin-right: -21px;
             margin-bottom: 20px;
             margin-left: -10px;
         }
@@ -107,9 +92,6 @@
         }
 
 
-        /*
-        * Main content
-        */
         .main {
             padding: 20px;
         }
@@ -125,9 +107,6 @@
         }
 
 
-        /*
-        * Placeholder dashboard ideas
-        */
 
         .placeholders {
             margin-bottom: 30px;
@@ -145,30 +124,29 @@
         }
     </style>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
   @if (auth()->user()->status == 'Menunggu')
     <div class="container">
-        <div class="row justify-content-centern">
-            <div class="col-md-8">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Akun Anda Dikunci Untuk Sementara
+        <div class="row" align="center">
+            <div class="col-md-12">
+                <div class="panel panel-default justify-content-center">
+                    <div class="panel-heading fw-bold">
+                        <strong>Akun Anda Dikunci Untuk Sementara</strong>
                     </div>
                     <div class="panel-body">
                         Anda tidak memiliki izin untuk mengakses halaman. 
                         <br>Pastikan akun anda sudah terdaftar
                     </div>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}"
+                    <img src="{{asset ('image/lock.png')}}" width="25%" alt="">
+                    <br>
+                    <div class="panel-body">
+                    </div>
+                    <a class="list-group-item list-group-item-light p-3" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Kembali            
+                    <i class="fa fa-arrow-left me-2"></i>&nbsp; Kembali            
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -305,9 +283,6 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   @endif
