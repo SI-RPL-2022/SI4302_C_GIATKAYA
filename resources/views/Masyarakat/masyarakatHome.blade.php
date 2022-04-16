@@ -1,63 +1,56 @@
-<!-- @extends('dashboard2')
+@extends('dashboard2')
 
 @section('content')
+<div class="col-sm-12 main">
+          <div class="row">
+            <h1 class="page-header">Dashboard</h1>
 
-@if (auth()->user()->status == 'Menunggu')
-<nav class="navbar navbar-inverse">
-        
-        <div class="navbar-header">
-            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="#" class="navbar-brand">Brand</a>
-        </div>
-
-        <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Messages <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">Drafts</a></li>
-                        <li><a href="#">Sent Items</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Trash</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                    </span>
-                </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
-            </ul>
-        </div>
-    </nav>
-@endif
-
-
-@endsection -->
-<!-- <div class="container">
-    <div class="row justify-content-centern">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    Dashboard
-                </div>
-                <div class="card-body">
-                    Anda Seorang Masyarakat
-                </div>
+            <div class="row placeholders">
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
             </div>
+
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1,001</td>
+                    <td>Lorem</td>
+                    <td>ipsum</td>
+                    <td>dolor</td>
+                    <td>sit</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-    </div>
-</div> -->
+@endsection
