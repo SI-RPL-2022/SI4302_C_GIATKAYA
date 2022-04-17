@@ -8,10 +8,10 @@
       <img src="{{ asset('image/kantornew.png') }}" alt="">
     </div>
     <div class="col-sm-7 shadow p-3 mb-5 bg-body" style="border :2px solid #11CDEF; height: 500px; border-radius: 15px; margin-top: 120px;">
-      <div class="row" style="margin-left: 100px;">
+      <div class="row" style="margin-left: 70px;">
         <h4 class="fw-bold" style="margin-top: 80px;">Login sebagai rakyat GiatKaya!</h4>
         <p><small class="text-muted">Belum memiliki akun GiatKaya? <span class="fw-bold" style="color: #149BFC;"> <a href="{{('/register')}}">Daftar di sini! </a></span></small></p>
-        <div class="col-12 col-md-12 col-lg-8">
+        <div class="col-10 col-md-12 col-lg-8">
             @if (session('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <div style="font-size:15px;">{{ session('error') }}</div>

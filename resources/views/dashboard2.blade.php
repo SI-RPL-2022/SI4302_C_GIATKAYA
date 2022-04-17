@@ -231,6 +231,34 @@
         
       </div>
     </div>
+    @elseif (auth()->user()->status == '2')
+    <div class="container">
+        <div class="row" align="center">
+            <div class="col-md-12">
+                <div class="panel panel-default justify-content-center">
+                    <div class="panel-heading fw-bold">
+                        <strong>Akun Pendaftaran Di Tolak</strong>
+                    </div>
+                    <div class="panel-body">
+                        Akun yang di daftarkan tidak memenuhi syarat. 
+                        <br>Pastikan daftar dengan persyaratan yang tersedia
+                    </div>
+                    <img src="{{asset ('image/silang.png')}}" width="25%" alt="">
+                    <br>
+                    <div class="panel-body">
+                    </div>
+                    <a class="list-group-item list-group-item-light p-3" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                    <i class="fa fa-arrow-left me-2"></i>&nbsp; Kembali            
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
