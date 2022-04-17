@@ -21,15 +21,15 @@ return new class extends Migration
             $table->string('nomor', 13);
             $table->string('alamat',255);
             $table->string('password',255);
+            $table->enum('status', ['0','1','2']);
             $table->integer('tahun')->nullable();
-            $table->string('tanggal');
+            $table->string('tanggal')->nullable();
             $table->string('gender',255);
             $table->string('nik')->unique()->nullable();
             $table->string('usaha',255)->nullable();
             $table->string('bidang',255)->nullable();
             $table->integer('toko')->nullable();
             $table->string('foto')->nullable();
-            $table->string('status');
             $table->string('is_admin')->default(0);
             $table->rememberToken();
             $table->timestamps();

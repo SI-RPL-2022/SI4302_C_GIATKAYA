@@ -31,7 +31,6 @@ class User extends Authenticatable
         'bidang',
         'toko',
         'foto',
-        'status',
     ];
 
     /**

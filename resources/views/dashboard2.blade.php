@@ -127,7 +127,7 @@
   </head>
 
   <body>
-  @if (auth()->user()->status == 'Menunggu')
+  @if (auth()->user()->status == '0')
     <div class="container">
         <div class="row" align="center">
             <div class="col-md-12">
@@ -158,7 +158,7 @@
   
 
   
-  @elseif (auth()->user()->status == 'user')
+  @elseif (auth()->user()->status == '1')
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
