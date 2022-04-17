@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\CustomAuthController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 
 // Route::get('/login', [LoginController::class, 'login']);
@@ -41,4 +43,6 @@ Auth::routes();
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masyarakatHome'])->name('masyarakat.home')->middleware('is_masyarakat');
+
+Route::get('/verif', [AdmController::class, 'verifadmin']);
 
