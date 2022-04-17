@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/verif', [AdmController::class, 'verifadmin']);
+
+Route::post('/verif/search/{id}', [AdmController::class, 'search']);

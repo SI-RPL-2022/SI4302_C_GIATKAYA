@@ -1,8 +1,23 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<h2 class="sub-header text-center" >Verifikasi Data User</h2>
+<h2 class="sub-header text-center">Verifikasi Data User</h2>
 <div class="p-3">
+  <form action="/verif/search/{id}" method="post" enctype="multipart/form-data">
+    @csrf 
+    <div class="input-group">
+      <div class="form-outline">
+        <input type="search" id="nik" name="nik" class="form-control" />
+        <label class="form-label" for="nik">Search</label>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+  </form>
+
+
   <table class="table">
     <thead>
       <tr>
@@ -19,7 +34,7 @@
     </thead>
     <tbody>
       @php
-        $i = 1;
+      $i = 1;
       @endphp
       @foreach ($data_user as $key=>$row)
       <tr class="">
@@ -30,7 +45,8 @@
         <td>{{ $row->Nama_Usaha }}</td>
         <td>{{ $row->tahun_berdiri }}</td>
         <td>{{ $row->email }}</td>
-        <td><a href="#" data-toggle="modal" data-target="#modalFoto{{ $i }}">{{ $row->foto_ktp }}</a></li></td>
+        <td><a href="#" data-toggle="modal" data-target="#modalFoto{{ $i }}">{{ $row->foto_ktp }}</a></li>
+        </td>
         <td class="d-grid gap-2 d-md-flex justify-content-center text-center">
           <button class="btn btn-success me-md-2" type="button">Accept</button>
           <button class="btn btn-danger" type="button">Decline</button>
@@ -51,7 +67,7 @@
         </div>
       </div>
       @php
-        $i++;
+      $i++;
       @endphp
       @endforeach
     </tbody>

@@ -51,9 +51,6 @@
         */
 
         /* Hide for mobile, show later */
-        .sidebar {
-            
-        }
         @media (min-width: 768px) {
             .sidebar {
                 position: fixed;
