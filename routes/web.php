@@ -52,6 +52,8 @@ Route::post('training/store', [App\Http\Controllers\TrainingController::class, '
 Route::get('training/edit/{id}', [App\Http\Controllers\TrainingController::class, 'edit']);
 Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::class, 'update']);
 Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
+Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
+
 Route::get('/verif', [AdmController::class, 'verifadmin']);
 
 Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searching');

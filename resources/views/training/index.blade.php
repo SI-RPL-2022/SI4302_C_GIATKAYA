@@ -1,6 +1,17 @@
 @extends('layouts.dashboard')
 
 @section('content')
+<div class="p-3">
+  <form action="/training/search/{id}" method="post" enctype="multipart/form-data">
+    @csrf 
+    <form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <label class="form-label" for="jenis_training">Search by Kategori</label>
+    <input type="search" id="jenis_training" name="jenis_training" class="form-control" placeholder="Search ...">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</form>
     <div>
         <h2 class="text-center">Course</h2>
     </div>

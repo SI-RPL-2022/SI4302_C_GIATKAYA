@@ -100,4 +100,12 @@ class TrainingController extends Controller
         $model->delete();
         return redirect('training');
     }
+    public function search(Request $request){
+        $jenis_training = $request->jenis_training;
+        $data = \DB::table('training')->where('jenis_training', 'like', "%".$jenis_training."%")->get();
+        return view('training.index', [
+            "datas" => $data,
+        ]);
+    }
 }
+    
