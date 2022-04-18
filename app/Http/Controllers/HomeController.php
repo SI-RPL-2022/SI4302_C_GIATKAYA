@@ -27,6 +27,7 @@ class HomeController extends Controller
         return view('Masyarakat.masyarakatHome');
     }
     public function adminHome()
+    
     {
         return view('Admin.adminHome');
     }
@@ -34,5 +35,7 @@ class HomeController extends Controller
     {
         $users = DB::table('users')->get();
         return view('dashboard2',['users'=> $users]);
+
     }
 }
+{{  }}{{  }}{{  }}

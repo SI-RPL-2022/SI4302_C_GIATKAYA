@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\infokerjaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +34,9 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard2', function () {
     return view('dashboard2');
 });
-
+//Route::get('/training', function () {
+//   return view('training.index');
+//});
 // Route::get('/login', [CustomAuthController::class, 'login']);
 // Route::get('/regis', [CustomAuthController::class, 'registrasi']);
 // Route::post('/regis-user', [CustomAuthController::class, 'registrasiUser'])->name('registrasi-user');
@@ -43,12 +47,15 @@ Auth::routes();
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masyarakatHome'])->name('masyarakat.home')->middleware('is_masyarakat');
 
-// Route::get('/verif', [AdmController::class, 'verifadmin']);
-
-
+Route::get('infokerja', [App\Http\Controllers\infokerjaController::class, 'index']);
+Route::get('infokerja/create', [App\Http\Controllers\infokerjaController::class, 'create']);
+Route::post('infokerja/store', [App\Http\Controllers\infokerjaController::class, 'store']);
+Route::get('infokerja/edit/{id}', [App\Http\Controllers\infokerjaController::class, 'edit']);
+Route::post('infokerja/update/{id}', [App\Http\Controllers\infokerjaController::class, 'update']);
+Route::get('infokerja/delete/{id}', [App\Http\Controllers\infokerjaController::class, 'destroy']);
 Route::get('/verif', [AdmController::class, 'verifadmin']);
 
 Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searching');
 
 Route::post('/verif/update', [AdmController::class, 'update'])->name('update_status');
-
+Route::post('/infokerja/search/{id}', [infokerjaController::class, 'search'])->name('searching');
