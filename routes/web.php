@@ -6,7 +6,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\TrainingController;
+<<<<<<< HEAD
 use App\Http\Controllers\infokerjaController;
+=======
+>>>>>>> 92cc9e8d659116758d7b70e1c49815e918e3625d
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +49,7 @@ Auth::routes();
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masyarakatHome'])->name('masyarakat.home')->middleware('is_masyarakat');
+<<<<<<< HEAD
 
 Route::get('infokerja', [App\Http\Controllers\infokerjaController::class, 'index']);
 Route::get('infokerja/create', [App\Http\Controllers\infokerjaController::class, 'create']);
@@ -53,6 +57,17 @@ Route::post('infokerja/store', [App\Http\Controllers\infokerjaController::class,
 Route::get('infokerja/edit/{id}', [App\Http\Controllers\infokerjaController::class, 'edit']);
 Route::post('infokerja/update/{id}', [App\Http\Controllers\infokerjaController::class, 'update']);
 Route::get('infokerja/delete/{id}', [App\Http\Controllers\infokerjaController::class, 'destroy']);
+=======
+Route::get('training', [App\Http\Controllers\TrainingController::class, 'index']);
+// Route::get('/verif', [AdmController::class, 'verifadmin']);
+Route::get('training/create', [App\Http\Controllers\TrainingController::class, 'create']);
+Route::post('training/store', [App\Http\Controllers\TrainingController::class, 'store']);
+Route::get('training/edit/{id}', [App\Http\Controllers\TrainingController::class, 'edit']);
+Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::class, 'update']);
+Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
+Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
+
+>>>>>>> 92cc9e8d659116758d7b70e1c49815e918e3625d
 Route::get('/verif', [AdmController::class, 'verifadmin']);
 
 Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searching');
