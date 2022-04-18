@@ -44,5 +44,5 @@ Auth::routes();
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masyarakatHome'])->name('masyarakat.home')->middleware('is_masyarakat');
 
-Route::get('/verif', [AdmController::class, 'verifadmin']);
+// Route::get('/verif', [AdmController::class, 'verifadmin']);
 

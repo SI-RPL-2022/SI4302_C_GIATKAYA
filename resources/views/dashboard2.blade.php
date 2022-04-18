@@ -5,17 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
     <title>Dashboard</title>
-  
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/6de6e67382.js" crossorigin="anonymous"></script>
-    
-    <style>
-
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -27,46 +22,35 @@
         */
 
         /* Move down content because we have a fixed navbar that is 50px tall */
-
         body {
             padding-top: 50px;
         }
-
-
 
 
         /*
         * Global add-ons
         */
 
-
         .sub-header {
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
         }
 
-
-
-
         /*
         * Top navigation
         * Hide default border to remove 1px line.
         */
-
         .navbar-fixed-top {
             border: 0;
             color: #fff;
             background-color: #11CDEF;
         }
 
-
-
         /*
         * Sidebar
         */
 
         /* Hide for mobile, show later */
-
         .sidebar {
             
         }
@@ -80,11 +64,7 @@
                 display: block;
                 padding: 15px;
                 overflow-x: auto;
-
-                overflow-y: auto;
-
                 overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-
                 background-color: #f5f5f5;
                 border-right: 1px solid #eee;
                 width: 240px;
@@ -92,15 +72,9 @@
             }
         }
 
-
-
-        .nav-sidebar {
-            margin-right: -21px;
-
         /* Sidebar navigation */
         .nav-sidebar {
             margin-right: -21px; /* 20px padding + 1px border */
-
             margin-bottom: 20px;
             margin-left: -10px;
         }
@@ -133,12 +107,9 @@
         }
 
 
-
-
         /*
         * Main content
         */
-
         .main {
             padding: 20px;
         }
@@ -154,12 +125,9 @@
         }
 
 
-
-
         /*
         * Placeholder dashboard ideas
         */
-
 
         .placeholders {
             margin-bottom: 30px;
@@ -177,7 +145,11 @@
         }
     </style>
 
-
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
@@ -186,6 +158,10 @@
         <div class="row" align="center">
             <div class="col-md-12">
                 <div class="panel panel-default justify-content-center">
+                <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
                     <div class="panel-heading fw-bold">
                         <strong>Akun Anda Dikunci Untuk Sementara</strong>
                     </div>
@@ -236,8 +212,6 @@
 
           <a class="navbar-brand" href="{{ url('/') }}">GIATKAYA</a>
 
-          <a class="navbar-brand" href="#">GIAT KAYA</a>
-
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -246,8 +220,6 @@
                     <div class="container-fluid">
 
                         <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
-
-                        <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">Steven</small>
 
                     </div>
                 </a>
@@ -273,8 +245,6 @@
 
                     href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
 
-                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal <i class=""></i>
-
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
@@ -285,8 +255,6 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
 
                     href=""><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
-
-                    href=""><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification <i class=""></i>
 
                 </a>
           </ul>
@@ -319,11 +287,11 @@
             <div class="col-md-12">
                 <div class="panel panel-default justify-content-center">
                     <div class="panel-heading fw-bold">
-                        <strong>Akun Pendaftaran Di Tolak</strong>
+                        <strong>Pendaftaran Akun Di Tolak</strong>
                     </div>
                     <div class="panel-body">
                         Akun yang di daftarkan tidak memenuhi syarat. 
-                        <br>Pastikan daftar dengan persyaratan yang tersedia
+                        <br>Pastikan daftar dengan persyaratan yang tersedia. Terima Kasih
                     </div>
                     <img src="{{asset ('image/silang.png')}}" width="25%" alt="">
                     <br>
@@ -345,73 +313,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   @endif
-
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
-                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Logout
-                </a>
-          </ul>
-        </div>
-        
-        <div class="col-sm-12 main">
-          <div class="row">
-            <h1 class="page-header">Dashboard</h1>
-
-            <div class="row placeholders">
-              <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-              </div>
-              <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-              </div>
-              <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-              </div>
-              <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-              </div>
-            </div>
-
-            <h2 class="sub-header">Section title</h2>
-            <div class="table-responsive">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1,001</td>
-                    <td>Lorem</td>
-                    <td>ipsum</td>
-                    <td>dolor</td>
-                    <td>sit</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   </body>
 </html>
