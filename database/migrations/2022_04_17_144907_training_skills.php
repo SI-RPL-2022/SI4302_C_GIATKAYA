@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name_training',255);
             $table->string('jenis_training',255);
-            $table->string('tanggal_training')->nullable();
+            $table->string('detail_training',255);
             $table->string('is_admin') -> default(1);  
             $table->rememberToken();
             $table->timestamps();
+            
         });
         
     }
