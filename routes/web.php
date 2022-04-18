@@ -20,4 +20,6 @@ Route::get('/', function () {
 
 Route::get('/verif', [AdmController::class, 'verifadmin']);
 
-Route::post('/verif/search/{id}', [AdmController::class, 'search']);
+Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searching');
+
+Route::post('/verif/update', [AdmController::class, 'update'])->name('update_status');
