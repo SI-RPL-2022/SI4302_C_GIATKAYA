@@ -51,9 +51,6 @@
         */
 
         /* Hide for mobile, show later */
-        .sidebar {
-            
-        }
         @media (min-width: 768px) {
             .sidebar {
                 position: fixed;
@@ -153,48 +150,6 @@
   </head>
 
   <body>
-  @if (auth()->user()->status == '0')
-    <div class="container">
-        <div class="row" align="center">
-            <div class="col-md-12">
-                <div class="panel panel-default justify-content-center">
-                    <div class="panel-heading fw-bold">
-                        <strong>Akun Anda Dikunci Untuk Sementara</strong>
-                    </div>
-                    <div class="panel-body">
-                        Anda tidak memiliki izin untuk mengakses halaman. 
-                        <br>Pastikan akun anda sudah terdaftar
-                    </div>
-                    <img src="{{asset ('image/lock.png')}}" width="25%" alt="">
-                    <br>
-                    <div class="panel-body">
-                    </div>
-                    <a class="list-group-item list-group-item-light p-3" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                    <i class="fa fa-arrow-left me-2"></i>&nbsp; Kembali            
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-
-  
-  @elseif (auth()->user()->status == '1')
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -205,18 +160,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-
-          <a class="navbar-brand" href="{{ url('/') }}">GIATKAYA</a>
-
+          <a class="navbar-brand" href="#">GIAT KAYA</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="#">
                     <div class="container-fluid">
-
-                        <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
-
+                        <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">Steven</small>
                     </div>
                 </a>
             </li>
@@ -238,9 +189,7 @@
                     href=""><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
-
-                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
-
+                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal <i class=""></i>
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
@@ -249,9 +198,10 @@
                     href=""><i class="fas fa-regular fa-user me-2"></i>&nbsp; Profile
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-
-                    href=""><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
-
+                    href=""><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href="{{ url('/verif') }}"><i class="fa-solid fa-list-check me-2"></i>&nbsp; Validation User
                 </a>
           </ul>
           <ul class="nav nav-sidebar">
@@ -262,53 +212,45 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
                     <i class="fas fa-regular fa-gear me-2"></i>&nbsp; Setting
                 </a>
-
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Logout            
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
+                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Logout
                 </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
           </ul>
         </div>
-        @yield('content')
         
-      </div>
-    </div>
-    @elseif (auth()->user()->status == '2')
-    <div class="container">
-        <div class="row" align="center">
-            <div class="col-md-12">
-                <div class="panel panel-default justify-content-center">
-                    <div class="panel-heading fw-bold">
-                        <strong>Pendaftaran Akun Di Tolak</strong>
-                    </div>
-                    <div class="panel-body">
-                        Akun yang di daftarkan tidak memenuhi syarat. 
-                        <br>Pastikan daftar dengan persyaratan yang tersedia. Terima Kasih
-                    </div>
-                    <img src="{{asset ('image/silang.png')}}" width="25%" alt="">
-                    <br>
-                    <div class="panel-body">
-                    </div>
-                    <a class="list-group-item list-group-item-light p-3" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                    <i class="fa fa-arrow-left me-2"></i>&nbsp; Kembali            
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </div>
+        <div class="col-sm-12 main">
+          <div class="row">
+            <h1 class="page-header">Dashboard</h1>
+
+            @yield('content')
+            <!-- <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1,001</td>
+                    <td>Lorem</td>
+                    <td>ipsum</td>
+                    <td>dolor</td>
+                    <td>sit</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
+          </div>
         </div>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  @endif
-
   </body>
 </html>

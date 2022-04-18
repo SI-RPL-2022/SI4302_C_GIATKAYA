@@ -22,7 +22,6 @@ Route::get('/', function () {
 });
 
 
-
 // Route::get('/login', [LoginController::class, 'login']);
 // Route::get('/register', [RegisterController::class, 'registrasi']);
 // Route::post('/register', [RegisterController::class, 'dashboard']);
@@ -45,4 +44,11 @@ Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome
 Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masyarakatHome'])->name('masyarakat.home')->middleware('is_masyarakat');
 
 // Route::get('/verif', [AdmController::class, 'verifadmin']);
+
+
+Route::get('/verif', [AdmController::class, 'verifadmin']);
+
+Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searching');
+
+Route::post('/verif/update', [AdmController::class, 'update'])->name('update_status');
 
