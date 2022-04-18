@@ -5,7 +5,14 @@
 <div class="p-3">
   <form action="/verif/search/{id}" method="post" enctype="multipart/form-data">
     @csrf 
-    <div class="row vertical-align">
+    <form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <label class="form-label" for="nik">Search by NIK</label>
+    <input type="search" id="nik" name="nik" class="form-control" placeholder="Search ...">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+    <!-- <div class="row vertical-align">
       <div class="col">
         <div class="input-group">
           <div class="form-outline">
@@ -19,7 +26,7 @@
       </div>
 
       </div>
-    </div>
+    </div> -->
     
   </form>
   
@@ -74,10 +81,9 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="modalFotoLabel">Foto KTP</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              ...
+              <img src="{{ asset('image/'.$row->foto) }}" width="500" alt="">
             </div>
           </div>
         </div>

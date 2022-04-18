@@ -167,7 +167,7 @@
             <li>
                 <a href="#">
                     <div class="container-fluid">
-                        <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">Steven</small>
+                        <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
                     </div>
                 </a>
             </li>
@@ -212,39 +212,22 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
                     <i class="fas fa-regular fa-gear me-2"></i>&nbsp; Setting
                 </a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
-                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Logout
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Logout            
                 </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
           </ul>
         </div>
         
         <div class="col-sm-12 main">
           <div class="row">
-            <h1 class="page-header">Dashboard</h1>
+            <!-- <h1 class="page-header">Dashboard</h1> -->
 
             @yield('content')
-            <!-- <div class="table-responsive">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1,001</td>
-                    <td>Lorem</td>
-                    <td>ipsum</td>
-                    <td>dolor</td>
-                    <td>sit</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div> -->
           </div>
         </div>
       </div>
