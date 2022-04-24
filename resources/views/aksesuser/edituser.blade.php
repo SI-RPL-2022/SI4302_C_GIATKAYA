@@ -5,6 +5,56 @@
         <h2 class="text-center">Edit Data Pengguna GiatKaya</h2>
     </div>
     <br/>
+    <!-- <div class="row">
+        <div class="col-xs-6">
+            <label for="first_name">Nama Lengkap</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6">
+            <label for="first_name">Tanggal Lahir</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Email</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Jenis Kelamin</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Nomor Handphone</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">NIK</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Alamat</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Nama Usaha</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Password</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Bidang Usaha</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Tahun Berdiri</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-6" style="margin-top: 25px;">
+            <label for="first_name">Jumlah Toko</label>
+            <input type="text" class="form-control">
+        </div>
+    </div> -->
     <form method="POST" action="{{ url('aksesdata/update/'.$users->id) }}">
         @csrf
         <div class="form-group">

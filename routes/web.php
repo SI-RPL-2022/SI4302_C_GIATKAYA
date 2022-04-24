@@ -38,9 +38,7 @@ Route::get('/dashboard2', function () {
     return view('dashboard2');
 });
 
-Route::get('/aksesdata', function () {
-    return view('aksesuser.datauser');
-});
+
 //Route::get('/training', function () {
 //   return view('training.index');
 //});

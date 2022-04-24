@@ -75,7 +75,8 @@
                             <td>{{ $user->toko }}</td>
                             <td>{{ $user->tahun }}</td>
                             <td>{{ $user->nik }}</td>
-                            <td><a class="btn btn-info" href="{{ url('aksesdata/edit/'.$user->id) }}"><i class="fa-solid fa-pen"></i></a></td>
+                            <td><a class="btn btn-info" href=""><i class="fa-solid fa-eye"></i></a></td>
+                            <td><a class="btn btn-warning" href="{{ url('aksesdata/edit/'.$user->id) }}"><i class="fa-solid fa-pen"></i></a></td>
                             <td><a class="btn btn-danger" href="{{ url('aksesdata/delete/'.$user->id) }}"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                     @endforeach
