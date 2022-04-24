@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="col-sm-12 main">
+<div class="col-sm-12">
           <div class="row">
             <h1 class="page-header">Dashboard</h1>
 

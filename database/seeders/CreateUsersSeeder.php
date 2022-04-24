@@ -22,6 +22,7 @@ class CreateUsersSeeder extends Seeder
                 'gender' => 'Laki-laki',
                 'nomor' => '082217767566',
                 'alamat' => 'Jl. Pemuda Pancasila',
+                'status' => '1',
                 'is_admin' => '1',
                 'password' => bcrypt('admin123'),
             ],

@@ -12,6 +12,7 @@ class InfoKerja extends Model
 
     protected $fillable = [
         'name_perusahaan',
+        'deskripsi',
         'lokasi',
         'jabatan',
         'gaji'    

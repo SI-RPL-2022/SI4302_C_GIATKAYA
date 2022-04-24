@@ -40,6 +40,7 @@ class infokerjaController extends Controller
     {
         $model = new InfoKerja;
         $model->name_perusahaan = $request->name_perusahaan;
+        $model->deskripsi = $request->deskripsi;
         $model->lokasi = $request->lokasi;
         $model->gaji = $request->gaji;
         $model->jabatan = $request->jabatan;
@@ -82,6 +83,7 @@ class infokerjaController extends Controller
     {
         $model = InfoKerja::find($id);
         $model->name_perusahaan = $request->name_perusahaan;
+        $model->deskripsi = $request->deskripsi;
         $model->lokasi = $request->lokasi;
         $model->gaji = $request->gaji;
         $model->jabatan = $request->jabatan;

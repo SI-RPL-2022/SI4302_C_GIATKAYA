@@ -12,7 +12,9 @@ class Training extends Model
 
     protected $fillable = [
         'name_training',
+        'metode_training',
         'jenis_training',
-        'detail_pelatihan'    
+        'detail_pelatihan',
+        'trainer'    
     ];
 }

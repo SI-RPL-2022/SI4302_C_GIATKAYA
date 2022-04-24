@@ -1,12 +1,16 @@
 @extends('layouts.dashboard')
-
+@section('title','Lapangan Kerja')
 @section('content')
+<div>
+    <h2 class="text-center">Informasi Pekerjaan</h2>
+</div>
     {{-- <br/>
     <a class="btn btn-info" href="{{ url('infokerja/create') }}">Tambah</a>
     <br/>
     <table class="table-bordered table">
         <tr>
             <th>Nama Perusahaan</th>
+            <th>Deskripsi</th>
             <th>Lokasi</th>
             <th>Jabatan</th>
             <th>Gaji</th>
@@ -15,6 +19,7 @@
         @foreach($datas as $key=>$value)
             <tr>
                 <td>{{ $value->name_perusahaan }}</td>
+                <td>{{ $value->deskripsi }}</td>
                 <td>{{ $value->lokasi }}</td>
                 <td>{{ $value->jabatan }}</td>
                 <td>{{ $value->gaji }}</td>
@@ -42,11 +47,11 @@
           <label class="form-label" for="lokasi">Search by Lokasi</label>
           <input type="search" id="lokasi" name="lokasi" class="form-control" placeholder="Search ...">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-info">Cari</button>
       </form>
     </div>
     <br/>
-    <a class="btn btn-info" href="{{ url('infokerja/create') }}">Tambah</a>
+    <a class="btn btn-info" href="{{ url('infokerja/create') }}"><i class="fa-solid fa-plus"></i>&nbsp; Tambah Informasi Kerja</a>
     <br/>
     <br>
     <div class="row">
@@ -56,10 +61,14 @@
             {{-- <img data-src="holder.js/300x200" alt="..."> --}}
             <div class="caption">
               <h3><b>{{ $value->name_perusahaan }}</b></h3>
-              <p>{{ $value->lokasi }}</p>
-              <p>{{ $value->jabatan }}</p>
-              <p>{{ $value->gaji }}</p>
-              <p><a class="btn btn-info" href="{{ url('infokerja/edit/'.$value->id) }}">Edit</a> <a class="btn btn-danger" href="{{ url('infokerja/delete/'.$value->id) }}">Delete</a></p>
+              <hr>
+              <p>{{ $value->deskripsi }}</p>
+              <hr>
+              <p><i class="fa-solid fa-location-dot"></i>&nbsp; {{ $value->lokasi }}</p>
+              <p><i class="fa-solid fa-user-tie"></i>&nbsp; {{ $value->jabatan }}</p>
+              <p><i class="fa-solid fa-money-bill"></i>&nbsp; {{ $value->gaji }}</p>
+              <hr>
+              <p align="center"><a class="btn btn-info" href="{{ url('infokerja/edit/'.$value->id) }}">Edit</a> <a class="btn btn-danger" href="{{ url('infokerja/delete/'.$value->id) }}">Delete</a></p>
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@
             </div>
             <div class="form-floating mb-3">
                 <input type="text" name="tahun" style="border-bottom:2px solid #11CDEF" class="form-control form-control-sm border-top-0 border-end-0 border-start-0" id="tahun" placeholder="Tahun Berdiri">
-                <label for="tahun">Tahun Berdiri (Optional)</label>
+                <label for="tahun">Tahun Berdiri</label>
             </div>
                     <div class="mb-3">
                         <label for="foto" class="form-label">Foto KTP</label>
@@ -70,15 +70,15 @@
             </div>
             <div class="form-floating mb-3">
                 <input type="text" name="usaha" style="border-bottom:2px solid #11CDEF" class="form-control form-control-sm border-top-0 border-end-0 border-start-0" id="usaha" placeholder="Nama Usaha">
-                <label for="usaha">Nama Usaha (Optional)</label>
+                <label for="usaha">Nama Usaha</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" name="bidang" style="border-bottom:2px solid #11CDEF" class="form-control form-control-sm border-top-0 border-end-0 border-start-0" id="bidang" placeholder="Bidang Usaha">
-                <label for="bidang">Bidang Usaha (Optional)</label>
+                <label for="bidang">Bidang Usaha</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="number" name="toko" style="border-bottom:2px solid #11CDEF" class="form-control form-control-sm border-top-0 border-end-0 border-start-0" id="toko" placeholder="Jumlah Toko">
-                <label for="toko">Jumlah Toko (Optional)</label>
+                <label for="toko">Jumlah Toko</label>
             </div>
             </form>
         </div>

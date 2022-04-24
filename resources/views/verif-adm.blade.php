@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-
+@section('title','Validation User')
 @section('content')
 <h2 class="sub-header text-center">Verifikasi Data User</h2>
 <div class="p-3">
@@ -10,7 +10,7 @@
     <label class="form-label" for="nik">Search by NIK</label>
     <input type="search" id="nik" name="nik" class="form-control" placeholder="Search ...">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-info">Cari</button>
 </form>
     <!-- <div class="row vertical-align">
       <div class="col">

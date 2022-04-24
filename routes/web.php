@@ -6,10 +6,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\TrainingController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\infokerjaController;
-=======
->>>>>>> 92cc9e8d659116758d7b70e1c49815e918e3625d
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +37,10 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard2', function () {
     return view('dashboard2');
 });
+
+Route::get('/aksesdata', function () {
+    return view('aksesuser.datauser');
+});
 //Route::get('/training', function () {
 //   return view('training.index');
 //});
@@ -49,15 +53,17 @@ Auth::routes();
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masyarakatHome'])->name('masyarakat.home')->middleware('is_masyarakat');
-<<<<<<< HEAD
 
+//Routes Informasi Pekerjaan
 Route::get('infokerja', [App\Http\Controllers\infokerjaController::class, 'index']);
 Route::get('infokerja/create', [App\Http\Controllers\infokerjaController::class, 'create']);
 Route::post('infokerja/store', [App\Http\Controllers\infokerjaController::class, 'store']);
 Route::get('infokerja/edit/{id}', [App\Http\Controllers\infokerjaController::class, 'edit']);
 Route::post('infokerja/update/{id}', [App\Http\Controllers\infokerjaController::class, 'update']);
 Route::get('infokerja/delete/{id}', [App\Http\Controllers\infokerjaController::class, 'destroy']);
-=======
+Route::post('/infokerja/search/{id}', [infokerjaController::class, 'search'])->name('searching');
+
+//Routes Training Skill
 Route::get('training', [App\Http\Controllers\TrainingController::class, 'index']);
 // Route::get('/verif', [AdmController::class, 'verifadmin']);
 Route::get('training/create', [App\Http\Controllers\TrainingController::class, 'create']);
@@ -67,10 +73,15 @@ Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::cl
 Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
 Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
 
->>>>>>> 92cc9e8d659116758d7b70e1c49815e918e3625d
+//Routes Validasi Data User
 Route::get('/verif', [AdmController::class, 'verifadmin']);
-
 Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searching');
-
 Route::post('/verif/update', [AdmController::class, 'update'])->name('update_status');
-Route::post('/infokerja/search/{id}', [infokerjaController::class, 'search'])->name('searching');
+
+//Routes Akses data pengguna
+Route::get('/aksesdata', [App\Http\Controllers\DataUserController::class, 'read']);
+Route::get('aksesdata/edit/{id}', [App\Http\Controllers\DataUserController::class, 'edit']);
+Route::post('aksesdata/update/{id}', [App\Http\Controllers\DataUserController::class, 'update']);
+Route::get('aksesdata/delete/{id}', [App\Http\Controllers\DataUserController::class, 'destroy']);
+
+Route::post('/aksesdata/search/{id}', [App\Http\Controllers\DataUserController::class, 'search'])->name('searching');

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('infokerja', function (Blueprint $table){
             $table->id();
             $table->string('name_perusahaan',255);
+            $table->string('deskripsi',255);
             $table->string('lokasi',255);
             $table->string('jabatan')->nullable();
             $table->string('gaji');

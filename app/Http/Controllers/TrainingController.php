@@ -40,8 +40,10 @@ class TrainingController extends Controller
     {
         $model = new Training;
         $model->name_training = $request->name_training;
+        $model->metode_training = $request->metode_training;
         $model->jenis_training = $request->jenis_training;
         $model->detail_pelatihan = $request->detail_pelatihan;
+        $model->trainer = $request->trainer;
         $model->save();
 
         return redirect('training');
@@ -81,8 +83,10 @@ class TrainingController extends Controller
     {
         $model = Training::find($id);
         $model->name_training = $request->name_training;
+        $model->metode_training = $request->metode_training;
         $model->jenis_training = $request->jenis_training;
         $model->detail_pelatihan = $request->detail_pelatihan;
+        $model->trainer = $request->trainer;
         $model->save();
 
         return redirect('training');

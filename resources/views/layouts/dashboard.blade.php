@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard</title>
+    <title>Dashboard | @yield('title')</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -172,9 +172,6 @@
                 </a>
             </li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
         </div>
       </div>
     </nav>
@@ -195,7 +192,7 @@
                     href="/infokerja"><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-                    href=""><i class="fas fa-regular fa-user me-2"></i>&nbsp; Profile
+                    href="{{ url('/aksesdata') }}"><i class="fas fa-regular fa-user me-2"></i>&nbsp; Data Profile User
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
@@ -225,7 +222,6 @@
         
         <div class="col-sm-12 main">
           <div class="row">
-            <!-- <h1 class="page-header">Dashboard</h1> -->
 
             @yield('content')
           </div>
