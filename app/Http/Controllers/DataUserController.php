@@ -38,6 +38,7 @@ class DataUserController extends Controller
         $users->tanggal = $request->tanggal;
         $users->alamat = $request->alamat;
         $users->nomor = $request->nomor;
+        $users->password = $request->password;
         $users->usaha = $request->usaha;
         $users->bidang = $request->bidang;
         $users->toko = $request->toko;

@@ -53,6 +53,7 @@
                         <th>Alamat</th>
                         <th>Nomor HP</th>
                         <th>Nama Usaha</th>
+                        <th>Password</th>
                         <th>Bidang Usaha</th>
                         <th>Jumlah Toko</th>
                         <th>Tahun Berdiri</th>
@@ -71,11 +72,78 @@
                             <td>{{ $user->alamat }}</td>
                             <td>{{ $user->nomor }}</td>
                             <td>{{ $user->usaha }}</td>
+                            <td>{{ $user->password }}</td>
                             <td>{{ $user->bidang }}</td>
                             <td>{{ $user->toko }}</td>
                             <td>{{ $user->tahun }}</td>
                             <td>{{ $user->nik }}</td>
-                            <td><a class="btn btn-info" href=""><i class="fa-solid fa-eye"></i></a></td>
+                            <td><a class="btn btn-info" data-toggle="modal" data-target="#largeShoes_{{ $user->id }}" href=""><i class="fa-solid fa-eye"></i></a></td>
+                            <!-- The modal -->
+                            <div class="modal fade" id="largeShoes_{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h4 class="modal-title" id="modalLabelLarge">{{$user->name}}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                                <div class="col-xs-6">
+                                                    <label for="first_name">Nama Lengkap</label>
+                                                    <p class="form-control-static">{{$user->name}}</p>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <label for="first_name">Tanggal Lahir</label>
+                                                    <p class="form-control-static">{{$user->tanggal}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Email</label>
+                                                    <p class="form-control-static">{{$user->email}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Jenis Kelamin</label>
+                                                    <p class="form-control-static">{{$user->gender}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Nomor Handphone</label>
+                                                    <p class="form-control-static">{{$user->nomor}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">NIK</label>
+                                                    <p class="form-control-static">{{$user->nik}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Alamat</label>
+                                                    <p class="form-control-static">{{$user->alamat}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Nama Usaha</label>
+                                                    <p class="form-control-static">{{$user->usaha}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Password</label>
+                                                    <p class="form-control-static" value="{{$user->password}}">{{$user->password}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Bidang Usaha</label>
+                                                    <p class="form-control-static">{{$user->bidang}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Tahun Berdiri</label>
+                                                    <p class="form-control-static">{{$user->tahun}}</p>
+                                                </div>
+                                                <div class="col-xs-6" style="margin-top: 25px;">
+                                                    <label for="first_name">Jumlah Toko</label>
+                                                    <p class="form-control-static">{{$user->toko}}</p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                             <td><a class="btn btn-warning" href="{{ url('aksesdata/edit/'.$user->id) }}"><i class="fa-solid fa-pen"></i></a></td>
                             <td><a class="btn btn-danger" href="{{ url('aksesdata/delete/'.$user->id) }}"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
