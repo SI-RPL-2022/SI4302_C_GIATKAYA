@@ -11,6 +11,7 @@ class Training extends Model
     protected $table = "training";
 
     protected $fillable = [
+        'cover',
         'name_training',
         'metode_training',
         'jenis_training',

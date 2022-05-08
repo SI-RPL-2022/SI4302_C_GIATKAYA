@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Training;
+use Illuminate\Support\Facades\File;
 
 class TrainingController extends Controller
 {
@@ -39,6 +40,10 @@ class TrainingController extends Controller
     public function store(Request $request)
     {
         $model = new Training;
+        if($request->hasFile('cover')){
+            $request->file('cover')->move('image/', $request->file('cover')->getClientOriginalName());
+            $model->cover = $request->file('cover')->getClientOriginalName();
+        }
         $model->name_training = $request->name_training;
         $model->metode_training = $request->metode_training;
         $model->jenis_training = $request->jenis_training;
@@ -87,6 +92,13 @@ class TrainingController extends Controller
         $model->jenis_training = $request->jenis_training;
         $model->detail_pelatihan = $request->detail_pelatihan;
         $model->trainer = $request->trainer;
+        if($request->cover_new == NULL){
+            $model->cover = $request->cover;
+        }else{
+            $foto = time().'.'.$request->cover_new->extension();
+            $request->cover_new->move(public_path('image/'), $foto);
+            $model->cover = $foto;
+        }        
         $model->save();
 
         return redirect('training');

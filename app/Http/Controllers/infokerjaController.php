@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\InfoKerja;
+use Illuminate\Support\Facades\File;
 
 class infokerjaController extends Controller
 {
@@ -39,6 +40,10 @@ class infokerjaController extends Controller
     public function store(Request $request)
     {
         $model = new InfoKerja;
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('public.image/', $request->file('foto')->getClientOriginalName());
+            $model->foto = $request->file('foto')->getClientOriginalName();
+        }
         $model->name_perusahaan = $request->name_perusahaan;
         $model->deskripsi = $request->deskripsi;
         $model->lokasi = $request->lokasi;
@@ -87,8 +92,13 @@ class infokerjaController extends Controller
         $model->lokasi = $request->lokasi;
         $model->gaji = $request->gaji;
         $model->jabatan = $request->jabatan;
-
-
+        if($request->foto_new == NULL){
+            $model->foto = $request->foto;
+        }else{
+            $gambar = time().'.'.$request->foto_new->extension();
+            $request->foto_new->move(public_path('public.image/'), $gambar);
+            $model->foto = $gambar;
+        }        
         $model->save();
 
         return redirect('infokerja');
