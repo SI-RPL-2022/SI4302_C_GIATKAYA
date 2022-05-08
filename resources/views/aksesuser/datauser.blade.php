@@ -52,11 +52,11 @@
                         <th>Tanggal Lahir</th>
                         <th>Alamat</th>
                         <th>Nomor HP</th>
-                        <th>Nama Usaha</th>
-                        <th>Password</th>
-                        <th>Bidang Usaha</th>
-                        <th>Jumlah Toko</th>
-                        <th>Tahun Berdiri</th>
+                        <!-- <th>Nama Usaha</th> -->
+                        <!-- <th>Password</th> -->
+                        <!-- <th>Bidang Usaha</th> -->
+                        <!-- <th>Jumlah Toko</th>
+                        <th>Tahun Berdiri</th> -->
                         <th>NIK</th>
 
                         <th colspan="2">Aksi</th>
@@ -71,11 +71,11 @@
                             <td>{{ $user->tanggal }}</td>
                             <td>{{ $user->alamat }}</td>
                             <td>{{ $user->nomor }}</td>
-                            <td>{{ $user->usaha }}</td>
-                            <td>{{ $user->password }}</td>
-                            <td>{{ $user->bidang }}</td>
+                            <!-- <td>{{ $user->usaha }}</td> -->
+                            <!-- <td>{{ $user->password }}</td> -->
+                            <!-- <td>{{ $user->bidang }}</td>
                             <td>{{ $user->toko }}</td>
-                            <td>{{ $user->tahun }}</td>
+                            <td>{{ $user->tahun }}</td> -->
                             <td>{{ $user->nik }}</td>
                             <td><a class="btn btn-info" data-toggle="modal" data-target="#largeShoes_{{ $user->id }}" href=""><i class="fa-solid fa-eye"></i></a></td>
                             <!-- The modal -->
@@ -91,6 +91,9 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
+                                        <div class="placeholder" align="center">
+                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                                        </div>
                                                 <div class="col-xs-6">
                                                     <label for="first_name">Nama Lengkap</label>
                                                     <p class="form-control-static">{{$user->name}}</p>
@@ -145,11 +148,11 @@
                                 </div>
                             </div>
                             <td><a class="btn btn-warning" href="{{ url('aksesdata/edit/'.$user->id) }}"><i class="fa-solid fa-pen"></i></a></td>
-                            <td><a class="btn btn-danger" href="{{ url('aksesdata/delete/'.$user->id) }}"><i class="fa-solid fa-trash"></i></a></td>
+                            <td><a class="btn btn-danger delete" href="#" data-id="{{$user->id}}" data-nama="{{$user->name}}"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                     @endforeach
                 </table>
             </div>
-            </div>
+        </div>
     </div>
 @endsection
