@@ -12,12 +12,14 @@
                     <p class="image_upload">
                     <label for="userImage">
                         <a class="btn btn-info" rel="nofollow">Change Profile Picture</a>
+                        <a href="{{ url('/aksesdata/edit-password/'.$users->id) }}" class="btn btn btn-warning">Ubah Password</a>
                     </label>
                         <input type="file" name="userImage" id="userImage" display="none">
                     </p>
                     </span>
                 </h4>
               </div>
+              
     <form method="POST" action="{{ url('aksesdata/update/'.$users->id) }}">
         @csrf
     <div class="row">
@@ -52,10 +54,6 @@
         <div class="col-xs-6" style="margin-top: 25px;">
             <label for="first_name">Nama Usaha</label>
             <input type="text" class="form-control" name="usaha" value="{{ $users->usaha }}">
-        </div>
-        <div class="col-xs-6" style="margin-top: 25px;">
-            <label for="first_name">Password</label>
-            <input type="password" class="form-control" name="password" value="{{ $users->password }}">
         </div>
         <div class="col-xs-6" style="margin-top: 25px;">
             <label for="first_name">Bidang Usaha</label>
@@ -115,6 +113,6 @@
             <input type="text" class="form-control" name="nik" value="{{ $users->nik }}">
         </div> -->
             <button type="submit" class="btn btn-info" style="margin-top: 20px;">Edit Data</button>
-            <a href="{{ url()->previous() }}" class="btn btn-danger" style="margin-top: 20px;">Cancel</a>
+            <a href="{{ route('datauser') }}" class="btn btn-danger" style="margin-top: 20px;">Cancel</a>      
     </form>
 @endsection

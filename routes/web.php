@@ -77,9 +77,10 @@ Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searc
 Route::post('/verif/update', [AdmController::class, 'update'])->name('update_status');
 
 //Routes Akses data pengguna
-Route::get('/aksesdata', [App\Http\Controllers\DataUserController::class, 'read']);
+Route::get('/aksesdata', [App\Http\Controllers\DataUserController::class, 'read'])->name('datauser');
 Route::get('aksesdata/edit/{id}', [App\Http\Controllers\DataUserController::class, 'edit']);
 Route::post('aksesdata/update/{id}', [App\Http\Controllers\DataUserController::class, 'update']);
 Route::get('aksesdata/delete/{id}', [App\Http\Controllers\DataUserController::class, 'destroy']);
-
+Route::get('/aksesdata/edit-password/{id}', [App\Http\Controllers\DataUserController::class, 'editPasswordProfile']);
+Route::post('/aksesdata/update-password/{id}', [App\Http\Controllers\DataUserController::class, 'updatePasswordProfile']);
 Route::post('/aksesdata/search/{id}', [App\Http\Controllers\DataUserController::class, 'search'])->name('searching');

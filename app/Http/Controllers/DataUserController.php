@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class DataUserController extends Controller
 {
@@ -38,7 +39,7 @@ class DataUserController extends Controller
         $users->tanggal = $request->tanggal;
         $users->alamat = $request->alamat;
         $users->nomor = $request->nomor;
-        $users->password = $request->password;
+        
         $users->usaha = $request->usaha;
         $users->bidang = $request->bidang;
         $users->toko = $request->toko;
@@ -54,5 +55,39 @@ class DataUserController extends Controller
         $users = User::find($id);
         $users->delete();
         return redirect('aksesdata');
+    }
+
+    public function editPasswordProfile($id)
+    {
+        $data = User::find($id);        
+
+        return view('aksesuser.editpassword', compact('data'));
+    }
+
+    public function updatePasswordProfile(Request $request, $id)
+    {
+        $data = User::find($id);        
+
+        $validate = $request->validate([
+            'password_lama' => 'required|string|min:8',
+            'password' => 'required|string|confirmed|min:8'                      
+        ]);
+    
+        $password_lama = $request->password_lama;        
+        
+        if(Hash::check($password_lama, $data->password)){
+            if($password_lama != $request->password){
+                $data->password = Hash::make($request->password);
+                $data->save();
+
+                return redirect(route('datauser'))->with('success', 'Password Berhasil Diubah');
+            }                
+            else{
+                return redirect()->back()->with("error","Password Baru dan Password Lama Tidak Boleh Sama");
+            }
+        }else{
+            return redirect()->back()->with("error","Password Lama yang Anda Masukkan Salah");
+        }                   
+
     }
 }
