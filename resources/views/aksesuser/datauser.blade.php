@@ -39,7 +39,7 @@
     <div style="background-color: #8FBDD3;">
         <div class="panel panel-info">
             <!-- Default panel contents -->
-            <div class="panel-heading">Daftar Data Pengguna </div>
+            <div class="panel-heading"><strong>Daftar Data Pengguna</strong> </div>
 
             <!-- Table -->
             <div class="table-responsive">
