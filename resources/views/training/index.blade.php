@@ -19,12 +19,13 @@
     <div style="background-color: #8FBDD3; ">
         <div class="panel panel-info">
             <!-- Default panel contents -->
-            <div class="panel-heading">Daftar Pelatihan</div>
+            <div class="panel-heading"><strong>Daftar Pelatihan</strong></div>
 
             <!-- Table -->
             <table class="table">
             <tr>
                 <th>No</th>
+                <th>Thumbnail</th>
                 <th>Nama Pelatihan</th>
                 <th>Metode Pelatihan</th>
                 <th>Kategori Pelatihan</th>
@@ -36,13 +37,14 @@
             @foreach($datas as $key=>$value)
                 <tr>
                     <td>{{ $no++ }}</td>
+                    <td><img src="{{ asset('image/'.$value->cover) }}" style="width: 100px;" alt=""></td>
                     <td>{{ $value->name_training }}</td>
-                    <td>{{ $value->metode_training }}</td>
+                    <td><span class="label label-info">{{ $value->metode_training }}</span></td>
                     <td>{{ $value->jenis_training }}</td>
                     <td>{{ $value->detail_pelatihan }}</td>
                     <td>{{ $value->trainer }}</td>
                     <td><a class="btn btn-info" href="{{ url('training/edit/'.$value->id) }}">Edit</a></td>
-                    <td><a class="btn btn-danger" href="{{ url('training/delete/'.$value->id) }}">Delete</a></td>
+                    <td><a class="btn btn-danger delete2" href="#" data-id="{{$value->id}}" data-nama="{{$value->name_training}}">Delete</a></td>
                 </tr>
             @endforeach
             </table>

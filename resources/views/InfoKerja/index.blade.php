@@ -60,6 +60,11 @@
           <div class="thumbnail">
             {{-- <img data-src="holder.js/300x200" alt="..."> --}}
             <div class="caption">
+              <h3>
+                <b>
+                  <center><img src="{{ asset('public.image/'.$value->foto) }}" style="width: 190px;" alt=""></center>
+                </b>
+              </h3>
               <h3><b>{{ $value->name_perusahaan }}</b></h3>
               <hr>
               <p>{{ $value->deskripsi }}</p>
@@ -68,7 +73,7 @@
               <p><i class="fa-solid fa-user-tie"></i>&nbsp; {{ $value->jabatan }}</p>
               <p><i class="fa-solid fa-money-bill"></i>&nbsp; {{ $value->gaji }}</p>
               <hr>
-              <p align="center"><a class="btn btn-info" href="{{ url('infokerja/edit/'.$value->id) }}">Edit</a> <a class="btn btn-danger" href="{{ url('infokerja/delete/'.$value->id) }}">Delete</a></p>
+              <p align="center"><a class="btn btn-info" href="{{ url('infokerja/edit/'.$value->id) }}">Edit</a> <a class="btn btn-danger delete3" href="#" data-id="{{$value->id}}" data-nama="{{$value->name_perusahaan}}">Delete</a></p>
             </div>
           </div>
         </div>

@@ -134,11 +134,68 @@
             margin-bottom: 0;
         }
         .placeholder {
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
         }
         .placeholder img {
             display: inline-block;
+            width: 15%;
             border-radius: 50%;
+        }
+        .image_upload > input{
+            display:none;
+        }
+        /* .form {
+            border: 1px solid #8cfcfc
+        } */
+        body{
+          margin-top:20px;
+          background:#FAFAFA;
+        }
+        .order-card {
+            color: #fff;
+        }
+
+        .bg-c-blue {
+            background: linear-gradient(45deg,#4099ff,#73b4ff);
+        }
+
+        .bg-c-green {
+            background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+        }
+
+        .bg-c-yellow {
+            background: linear-gradient(45deg,#FFB64D,#ffcb80);
+        }
+
+        .bg-c-pink {
+            background: linear-gradient(45deg,#FF5370,#ff869a);
+        }
+
+
+        .card {
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+            box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+            border: none;
+            margin-bottom: 30px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card .card-block {
+            padding: 10px;
+        }
+
+        .order-card i {
+            font-size: 26px;
+        }
+
+        .f-left {
+            float: left;
+        }
+
+        .f-right {
+            float: right;
         }
     </style>
 
@@ -167,7 +224,7 @@
             <li>
                 <a href="#">
                     <div class="container-fluid">
-                        <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
+                        <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
                     </div>
                 </a>
             </li>
@@ -231,5 +288,92 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.js"
+    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+    crossorigin="anonymous">
+    </script>
+    </body>
+    <!-- Alert delete Admin RUD data pengguna GiatKaya -->
+    <script>
+        $('.delete').click(function(){
+            var idpegawai = $(this). attr('data-id');
+            var namapegawai = $(this). attr('data-nama');
+            swal({
+  title: "Apa kamu yakin?",
+  text: "Setelah dihapus, Anda tidak akan dapat memulihkan data pengguna dengan nama "+namapegawai+" ini!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+      window.location = "aksesdata/delete/"+idpegawai+""
+    swal("Data berhasil di hapus!", {
+      icon: "success",
+    });
+  } else {
+    swal("Data tidak jadi di hapus", {
+      icon: "info",
+    });
+  }
+});
+        });
+        
+    </script>
+    <!-- Alert delete Admin CRUD data pelatihan -->
+    <script>
+        $('.delete2').click(function(){
+            var idpelatihan = $(this). attr('data-id');
+            var namapelatihan = $(this). attr('data-nama');
+            swal({
+  title: "Apa kamu yakin?",
+  text: "Setelah dihapus, Anda tidak akan dapat memulihkan data pelatihan "+namapelatihan+" ini!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+      window.location = "training/delete/"+idpelatihan+""
+    swal("Data berhasil di hapus!", {
+      icon: "success",
+    });
+  } else {
+    swal("Data tidak jadi di hapus", {
+      icon: "info",
+    });
+  }
+});
+        });
+        
+    </script>
+    <!-- Alert delete Admin CRUD data infokerja -->
+    <script>
+        $('.delete3').click(function(){
+            var idkerja = $(this). attr('data-id');
+            var namakerja = $(this). attr('data-nama');
+            swal({
+  title: "Apa kamu yakin?",
+  text: "Setelah dihapus, Anda tidak akan dapat memulihkan data informasi pekerjaan tentang "+namakerja+" ini!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+      window.location = "infokerja/delete/"+idkerja+""
+    swal("Data berhasil di hapus!", {
+      icon: "success",
+    });
+  } else {
+    swal("Data tidak jadi di hapus", {
+      icon: "info",
+    });
+  }
+});
+        });
+        
+    </script>
 </html>
