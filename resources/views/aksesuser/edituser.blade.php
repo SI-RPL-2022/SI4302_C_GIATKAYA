@@ -7,24 +7,25 @@
         <h2 class="text-center">Edit Data Pengguna GiatKaya</h2>
     </div>
     <br/>
+    <form method="POST" action="{{ url('aksesdata/update/'.$users->id) }}" enctype="multipart/form-data">
+        @csrf
     <div class="placeholder" align="center">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <img src="{{asset('image/'.$users->foto_profil)}}" width="200" height="200" class="img-responsive" alt="">
                 <h4>
                     <span>
                     <p class="image_upload">
-                    <label for="userImage">
-                        <a class="btn btn-info" rel="nofollow">Change Profile Picture</a>
-                        <a href="{{ url('/aksesdata/edit-password/'.$users->id) }}" class="btn btn btn-warning">Ubah Password</a>
+                    <label for="foto_profil">
+                        <a class="btn btn-info">Change Profile Picture</a>
+                        
                     </label>
-                        <input type="file" name="userImage" id="userImage" display="none">
+                    <input type="file" name="foto_profil" id="foto_profil">
+                        <a href="{{ url('/aksesdata/edit-password/'.$users->id) }}" class="btn btn btn-warning">Ubah Password</a>
                     </p>
                     </span>
                 </h4>
               </div>
   </div>
   <div class="panel-body">
-  <form method="POST" action="{{ url('aksesdata/update/'.$users->id) }}">
-        @csrf
     <div class="row">
         <div class="col-xs-6">
             <label for="first_name">Nama Lengkap</label>
@@ -40,7 +41,11 @@
         </div>
         <div class="col-xs-6" style="margin-top: 25px;">
             <label for="first_name">Jenis Kelamin</label>
-            <input type="text" class="form-control" name="gender" value="{{ $users->gender }}">
+            <select class="form-control form" id="sel1" name="gender">
+                <option value="Laki-laki" @if($users->gender == 'Laki-laki') selected @endif>Laki-laki</option>
+                <option value="Perempuan" @if($users->gender == 'Perempuan') selected @endif>Perempuan</option>
+            </select>
+            <!-- <input type="text" class="form-control" name="gender" value="{{ $users->gender }}"> -->
         </div>
         <div class="col-xs-6" style="margin-top: 25px;">
             <label for="first_name">Nomor Handphone</label>

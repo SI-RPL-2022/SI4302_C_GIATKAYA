@@ -39,7 +39,10 @@ class DataUserController extends Controller
         $users->tanggal = $request->tanggal;
         $users->alamat = $request->alamat;
         $users->nomor = $request->nomor;
-        
+        if($request->hasFile('foto_profil')){
+            $request->file('foto_profil')->move('image/',$request->file('foto_profil')->getClientOriginalName());
+            $users->foto_profil = $request->file('foto_profil')->getClientOriginalName();
+        }
         $users->usaha = $request->usaha;
         $users->bidang = $request->bidang;
         $users->toko = $request->toko;
