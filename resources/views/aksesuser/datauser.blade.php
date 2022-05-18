@@ -86,7 +86,46 @@
                                                     <div class="placeholder" align="center">
                                                         <img src="{{asset('image/'.$user->foto_profil)}}" alt="Generic placeholder thumbnail">
                                                     </div>
+                                                    <div class="row" style="margin-top: 20px;">
+                                                        <div class="col-xs-6 col-sm-3 placeholder">
+                                                                <div class="card bg-c-blue order-card">
+                                                                    <div class="card-block">
+                                                                        <h6 class="m-b-20"><strong>DATA PENGGUNA GIATKAYA</strong></h6>
+                                                                        <h2 class="text-right"><i class="fas fa-regular fa-user f-left"></i><span>50</span></h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 col-sm-3 placeholder">
+                                                                <div class="card bg-c-blue order-card">
+                                                                    <div class="card-block">
+                                                                    <h6 class="m-b-20"><strong>PINJAMAN MODAL</strong></h6>
+                                                                    <h2 class="text-right"><i class="fas fa-regular fa-coins f-left"></i><span>Rp 1000</span></h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 col-sm-3 placeholder">
+                                                                <div class="card bg-c-blue order-card">
+                                                                    <div class="card-block">
+                                                                        <h6 class="m-b-20"><strong>PELATIHAN DIIKUTI</strong></h6>
+                                                                        <h2 class="text-right"><i class="fa-solid fa-book-open-reader f-left"></i><span>500</span></h2>
+                                                                        <!-- <p class="m-b-0">Completed Course<span class="f-right">351</span></p> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 col-sm-3 placeholder">
+                                                                <div class="card bg-c-blue order-card">
+                                                                    <div class="card-block">
+                                                                        <h6 class="m-b-20"><strong>SERTIFIKAT PELATIHAN</strong></h6>
+                                                                        <h2 class="text-right"><i class="fa fa-solid fa-file f-left"></i><span>486</span></h2>
+                                                                        <!-- <p class="m-b-0">Completed Course<span class="f-right">351</span></p> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
                                                 </div>
+                                                
+                                                
+                                                
                                                 <div class="panel-body">
                                                     <div class="col-xs-6">
                                                         <label for="first_name">Nama Lengkap</label>
