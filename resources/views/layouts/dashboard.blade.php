@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,22 +19,17 @@
         /*
         * Base structure
         */
-
         /* Move down content because we have a fixed navbar that is 50px tall */
         body {
             padding-top: 50px;
         }
-
-
         /*
         * Global add-ons
         */
-
         .sub-header {
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
         }
-
         /*
         * Top navigation
         * Hide default border to remove 1px line.
@@ -45,11 +39,9 @@
             color: #fff;
             background-color: #11CDEF;
         }
-
         /*
         * Sidebar
         */
-
         /* Hide for mobile, show later */
         @media (min-width: 768px) {
             .sidebar {
@@ -68,7 +60,6 @@
                 color: #11CDEF;
             }
         }
-
         /* Sidebar navigation */
         .nav-sidebar {
             margin-right: -21px; /* 20px padding + 1px border */
@@ -102,15 +93,12 @@
             background-color: #F2F4F6;
             border-left: solid #11CDEF 5px;
         }
-
-
         /*
         * Main content
         */
         .main {
             padding: 20px;
         }
-
         @media (min-width: 768px) {
             .main {
                 padding-right: 40px;
@@ -120,12 +108,9 @@
         .main .page-header {
             margin-top: 0;
         }
-
-
         /*
         * Placeholder dashboard ideas
         */
-
         .placeholders {
             margin-bottom: 30px;
             text-align: center;
@@ -182,6 +167,7 @@
           <ul class="nav nav-sidebar">
           <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">MENU</a>
           <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url('admin/home') }}"><i class="fa fa-dashboard me-2"></i>&nbsp; Dashboard</a>
+                @if (auth()->user()->is_admin == 1)
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                     
                     href="/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
@@ -200,6 +186,25 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href="{{ url('/verif') }}"><i class="fa-solid fa-list-check me-2"></i>&nbsp; Validation User
                 </a>
+                @else
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"                     
+                    href="/masyarakat/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"                
+                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href=""><i class="fas fa-regular fa-user me-2"></i>&nbsp; Profile
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+                    href=""><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
+                </a>
+                @endif
+
+
           </ul>
           <ul class="nav nav-sidebar">
           <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">OTHER</a>

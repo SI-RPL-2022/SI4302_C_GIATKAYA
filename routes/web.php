@@ -71,6 +71,18 @@ Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::cl
 Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
 Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
 
+// Route Training Masyarakat
+Route::get('masyarakat/training', [App\Http\Controllers\UserTrainingController::class, 'index']);
+Route::get('masyarakat/training/{id}', [App\Http\Controllers\UserTrainingController::class, 'show']);
+Route::get('masyarakat/training/{id}/detail', [App\Http\Controllers\UserTrainingController::class, 'detail']);
+// Route::get('/verif', [AdmController::class, 'verifadmin']);
+// Route::get('training/create', [App\Http\Controllers\TrainingController::class, 'create']);
+// Route::post('training/store', [App\Http\Controllers\TrainingController::class, 'store']);
+// Route::get('training/edit/{id}', [App\Http\Controllers\TrainingController::class, 'edit']);
+// Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::class, 'update']);
+// Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
+// Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
+
 //Routes Validasi Data User
 Route::get('/verif', [AdmController::class, 'verifadmin']);
 Route::post('/verif/search/{id}', [AdmController::class, 'search'])->name('searching');

@@ -26,6 +26,16 @@ class CreateUsersSeeder extends Seeder
                 'is_admin' => '1',
                 'password' => bcrypt('admin123'),
             ],
+            [
+                'name' => 'Fajar',
+                'email' => 'fajar@gmail.com',
+                'gender' => 'Laki-laki',
+                'nomor' => '082217767566',
+                'alamat' => 'Jl. Pemuda Pancasila',
+                'status' => '1',
+                'is_admin' => '0',
+                'password' => bcrypt('fajar123'),
+            ],
             
         ];
 

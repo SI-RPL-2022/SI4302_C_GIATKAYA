@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('training', function (Blueprint $table){
             $table->id();
             $table->string('name_training',255);
-            $table->string('metode_training',255);
-            $table->string('jenis_training',255);
+            $table->enum('metode_training', ['Video Materi','Artikel Modul']);
+            $table->enum('jenis_training', ['Business','Personal Skill','Tech & Development','Art, Design & Photography','Lifestyle']);
             $table->string('detail_pelatihan',255);
             $table->string('trainer',255);
             $table->string('is_admin') -> default(1);  
