@@ -29,6 +29,9 @@
                 <th>Nama Pelatihan</th>
                 <th>Metode Pelatihan</th>
                 <th>Kategori Pelatihan</th>
+                <th>Durasi</th>
+                <th>Rilis</th>
+                <th>Kualitas</th>
                 <th>Detail Pelatihan</th>
                 <th>Trainer</th>
                 <th colspan="2">Aksi</th>
@@ -41,6 +44,9 @@
                     <td>{{ $value->name_training }}</td>
                     <td><span class="label label-info">{{ $value->metode_training }}</span></td>
                     <td>{{ $value->jenis_training }}</td>
+                    <td>{{ $value->durasi }}</td>
+                    <td>{{ $value->tgl_rilis }}</td>
+                    <td>{{ $value->kualitas }}</td>
                     <td>{{ $value->detail_pelatihan }}</td>
                     <td>{{ $value->trainer }}</td>
                     <td><a class="btn btn-info" href="{{ url('training/edit/'.$value->id) }}">Edit</a></td>

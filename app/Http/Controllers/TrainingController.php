@@ -47,6 +47,9 @@ class TrainingController extends Controller
         $model->name_training = $request->name_training;
         $model->metode_training = $request->metode_training;
         $model->jenis_training = $request->jenis_training;
+        $model->durasi = $request->durasi;
+        $model->tgl_rilis = $request->tgl_rilis;
+        $model->kualitas = $request->kualitas;
         $model->detail_pelatihan = $request->detail_pelatihan;
         $model->trainer = $request->trainer;
         $model->save();
@@ -90,6 +93,9 @@ class TrainingController extends Controller
         $model->name_training = $request->name_training;
         $model->metode_training = $request->metode_training;
         $model->jenis_training = $request->jenis_training;
+        $model->durasi = $request->durasi;
+        $model->tgl_rilis = $request->tgl_rilis;
+        $model->kualitas = $request->kualitas;
         $model->detail_pelatihan = $request->detail_pelatihan;
         $model->trainer = $request->trainer;
         if($request->cover_new == NULL){

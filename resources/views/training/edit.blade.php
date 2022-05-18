@@ -33,6 +33,18 @@
             <!-- <input type="text" class="form-control form" name="jenis_training" value="{{ $model->jenis_training }}"> -->
         </div>
         <div class="form-group">
+            <label for="last_name">Durasi</label>
+            <input type="text" class="form-control form" name="durasi" value="{{ $model->durasi }}">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Rilis</label>
+            <input type="date" class="form-control form" name="tgl_rilis" value="{{ $model->tgl_rilis }}">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Kualitas</label>
+            <input type="text" class="form-control form" name="kualitas" value="{{ $model->kualitas }}">
+        </div>
+        <div class="form-group">
             <label for="last_name">Detail Pelatihan</label>
             <input type="text" class="form-control form" name="detail_pelatihan" value="{{ $model->detail_pelatihan }}">
         </div>

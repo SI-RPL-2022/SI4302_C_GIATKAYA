@@ -137,7 +137,7 @@
             margin-bottom: 0;
         }
         .placeholder {
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
         }
         .placeholder img {
             display: inline-block;
@@ -213,9 +213,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="#">
-                    <div class="container-fluid">
+                    <div class="container-fluid placeholder">
 
-                        <img src="{{ asset('image/user.png') }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
+                        <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
 
                     </div>
                 </a>
@@ -235,7 +235,7 @@
           <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">MENU</a>
           <a class="list-group-item list-group-item-action list-group-item-light p-3" href=""><i class="fa fa-dashboard me-2"></i>&nbsp; Dashboard</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                     
-                    href="/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
+                    href=""><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
 

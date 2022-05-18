@@ -15,6 +15,9 @@ class Training extends Model
         'name_training',
         'metode_training',
         'jenis_training',
+        'durasi',
+        'tgl_rilis',
+        'kualitas',
         'detail_pelatihan',
         'trainer'    
     ];

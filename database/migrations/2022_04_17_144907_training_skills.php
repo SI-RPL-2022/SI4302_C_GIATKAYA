@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('name_training',255);
             $table->string('metode_training',255);
             $table->string('jenis_training',255);
+            $table->string('durasi',255);
+            $table->string('tgl_rilis');
+            $table->string('kualitas',255);
             $table->string('detail_pelatihan',255);
             $table->string('trainer',255);
             $table->string('is_admin') -> default(1);  

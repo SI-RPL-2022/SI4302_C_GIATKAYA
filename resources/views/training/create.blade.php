@@ -34,6 +34,18 @@
             <!-- <input type="text" class="form-control" id="last_name" name="jenis_training"> -->
         </div>
         <div class="form-group">
+            <label for="last_name">Durasi</label>
+            <input type="text" class="form-control form" id="last_name" name="durasi">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Rilis</label>
+            <input type="date" class="form-control form" id="last_name" name="tgl_rilis">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Kualitas</label>
+            <input type="text" class="form-control form" id="last_name" name="kualitas">
+        </div>
+        <div class="form-group">
             <label for="last_name">Detail Pelatihan</label>
             <input type="text" class="form-control form" id="last_name" name="detail_pelatihan">
         </div>

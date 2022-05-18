@@ -254,9 +254,11 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
                 </a>
+                @if (auth()->user()->is_admin==1)
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href="{{ url('/verif') }}"><i class="fa-solid fa-list-check me-2"></i>&nbsp; Validation User
                 </a>
+                @endif
           </ul>
           <ul class="nav nav-sidebar">
           <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">OTHER</a>

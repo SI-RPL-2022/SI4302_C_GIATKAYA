@@ -115,7 +115,7 @@
             margin-bottom: 0;
         }
         .placeholder {
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
         }
         .placeholder img {
             display: inline-block;
