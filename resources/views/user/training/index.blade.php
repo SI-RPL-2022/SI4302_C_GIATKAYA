@@ -26,6 +26,7 @@
 
     <div class="flex-container">
         @foreach($datas as $key=>$value)
+
         <div class="" style="background-color: white; width: 25rem; padding: 1.5rem; border-radius: 10px;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -33,7 +34,17 @@
                 <p style="color: #31A8CD">{{ $value->jenis_training }}</p>
                 <p style="font-weight: bold">{{ $value->name_training }}</p>
                 <p style="color: #31A8CD">{{ $value->trainer}}</p>
-                <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-primary">Ikut Pelatihan</a>
+                {{-- @if ($datas_transaction == 0)
+                    <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-primary">Ikut Pelatihan</a>
+                @else --}}
+                @foreach($datas_transaction as $key2=>$value2)
+                    @if ($value2->training_id == $value->id)
+                        <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-success">Lanjut Pelatihan</a>
+                    @else
+                        <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-primary">Ikut Pelatihan</a>
+                    @endif
+                @endforeach
+                {{-- @endif --}}
             </div>
         </div>
         @endforeach

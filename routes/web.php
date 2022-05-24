@@ -74,6 +74,7 @@ Route::post('/training/search/{id}', [TrainingController::class, 'search'])->nam
 // Route Training Masyarakat
 Route::get('masyarakat/training', [App\Http\Controllers\UserTrainingController::class, 'index']);
 Route::get('masyarakat/training/{id}', [App\Http\Controllers\UserTrainingController::class, 'show']);
+Route::post('masyarakat/training/{id}/store', [App\Http\Controllers\UserTrainingController::class, 'store']);
 Route::get('masyarakat/training/{id}/detail', [App\Http\Controllers\UserTrainingController::class, 'detail']);
 // Route::get('/verif', [AdmController::class, 'verifadmin']);
 // Route::get('training/create', [App\Http\Controllers\TrainingController::class, 'create']);

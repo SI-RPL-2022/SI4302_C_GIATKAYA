@@ -12,7 +12,7 @@
 </div>
 
 <div class="flex-container" style="margin-bottom: 2rem; justify-content: space-between;">
-    {{-- <div style="width: 60rem;"> tes</div> --}}
+    {{-- <div style="width: 60rem;">Tes</div> --}}
     <div style="background-color: #11CDEF; padding: 1.5rem; width: 70rem; margin-left: auto; margin-right: auto">
         
         <h3 style="margin: 0; margin-bottom: 1rem;">{{ $datas->name_training }}</h3>

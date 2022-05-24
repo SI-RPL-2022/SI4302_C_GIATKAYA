@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Training;
+use App\Models\TrainingTransaction;
 
 class UserTrainingController extends Controller
 {
@@ -16,7 +17,17 @@ class UserTrainingController extends Controller
     {
         $datas = Training::all();
 
-        return view('user.training.index', compact('datas'));
+        $datas_transaction = TrainingTransaction::where('user_id','=',auth()->user()->id)->get();
+        if ($datas_transaction->isEmpty()) {
+            $datas_transaction[] = (object) array(
+                'id' => 0, 
+                'user_id' => 0, 
+                'training_id' => 0
+            );
+        }
+        // dd($datas_transaction);
+
+        return view('user.training.index', compact('datas', 'datas_transaction'));
     }
 
     /**
@@ -37,7 +48,11 @@ class UserTrainingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new TrainingTransaction;
+        $data->user_id = $request->user_id;
+        $data->training_id = $request->training_id;
+        $data->save();
+        return redirect('/masyarakat/training/'.$request->training_id.'/detail');
     }
 
     /**
@@ -49,9 +64,22 @@ class UserTrainingController extends Controller
     public function show($id) //$id
     {
         $datas = Training::find($id);
+        $datas_transaction = TrainingTransaction::where([
+            ['user_id','=',auth()->user()->id],
+            ['training_id','=',$id]
+        ])->get();
+
+        if ($datas_transaction->isEmpty()) {
+            $datas_transaction[] = (object) array(
+                'id' => 0, 
+                'user_id' => 0, 
+                'training_id' => 0
+            );
+        }
+
         $datas_other = Training::where('id','!=',$id)->take(4)->get();
-        // dd($datas_other);
-        return view('user.training.show', compact('datas', 'datas_other'));
+        // dd($datas_transaction);
+        return view('user.training.show', compact('datas', 'datas_other', 'datas_transaction'));
     }
 
     public function detail($id) //$id
