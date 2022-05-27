@@ -51,7 +51,7 @@
         </div>
         <div class="form-group">
             <label for="last_name">Trainer</label>
-            <input type="text" class="form-control form" id="last_name" name="trainer">
+            <input type="text" class="form-control text-area form" id="last_name" name="trainer">
         </div>
         <div class="form-group">
             <label for="formFile" class="form-label">Cover Thumbnail</label>
