@@ -11,7 +11,7 @@ class DataUserController extends Controller
 {
     public function read()
     {
-        $users = DB::table('users') -> where('status','1') -> get();
+        $users = DB::table('users')->where('status','1')->where('is_admin',0)->get();
       
         return view('aksesuser.datauser', ['users' => $users]);
     }

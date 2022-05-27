@@ -6,7 +6,7 @@
     </div>
     <br/>
     <div class="placeholder" align="center">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">  
+        <img src="{{asset('image/'.$data->foto_profil)}}" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">  
     </div>
 <form method="post" action="{{ url('aksesdata/update-password/'.$data->id) }}" class="form-horizontal">
     @csrf
