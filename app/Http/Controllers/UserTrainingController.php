@@ -85,9 +85,9 @@ class UserTrainingController extends Controller
     public function detail($id) //$id
     {
         $datas = Training::find($id);
-        // $datas_other = Training::where('id','!=',$id)->take(4)->get();
+        $datas_other = Training::where('id','!=',$id)->take(4)->get();
         // dd($datas_other);
-        return view('user.training.detail', compact('datas'));
+        return view('user.training.detail', compact('datas', 'datas_other'));
     }
 
     /**
