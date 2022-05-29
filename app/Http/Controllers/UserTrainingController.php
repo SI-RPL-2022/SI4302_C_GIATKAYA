@@ -86,8 +86,10 @@ class UserTrainingController extends Controller
     {
         $datas = Training::find($id);
         $datas_other = Training::where('id','!=',$id)->take(4)->get();
+        $training_trsc= TrainingTransaction::where('training_id','=',$datas->id)->where('user_id','=',auth()->user()->id)->first();
+
         // dd($datas_other);
-        return view('user.training.detail', compact('datas', 'datas_other'));
+        return view('user.training.detail', compact('datas', 'datas_other','training_trsc'));
     }
 
     /**

@@ -70,6 +70,7 @@ Route::get('training/edit/{id}', [App\Http\Controllers\TrainingController::class
 Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::class, 'update']);
 Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
 Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
+Route::post('/training/selesai/', [TrainingController::class, 'status'])->name('status');
 
 // Route Training Masyarakat
 Route::get('masyarakat/training', [App\Http\Controllers\UserTrainingController::class, 'index']);

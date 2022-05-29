@@ -116,6 +116,13 @@
     </div>
 </div> --}}
 
+<div>
+<form action="{{ route('status') }}" method="POST">
+    @csrf
+    <input type="hidden" name="training_id" value='{{ $training_trsc->id }}'>
+    <button type="submit" class="btn btn-success">Selesai Pelatihan</button></form>
+</div>
+
 <style>
     .flex-container {
       display: flex;
