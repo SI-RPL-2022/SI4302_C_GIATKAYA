@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('training_id');
-            $table->enum('Status',['Selesai','Sedang mengikuti']);
+            $table->enum('Status',['Selesai','Sedang Mengikuti'])->default('Sedang Mengikuti');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('training_id')->references('id')->on('training')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

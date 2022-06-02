@@ -117,9 +117,9 @@ class TrainingController extends Controller
         $training_transaction = TrainingTransaction::find($id);
         $training_transaction->status = "Selesai";
         $training_transaction->save();
-        $datas = Training::all();
+        // $datas = Training::all();
 
-        return view('training.index', compact('datas'));
+        return redirect('/masyarakat/training');
     }
 }
     

@@ -6,7 +6,7 @@
 </div>
 <div class="p-3">
 
-<form action="/masyarakat/training/" method="post" enctype="multipart/form-data">
+<form action="/masyarakat/training/search/{id}" method="post" enctype="multipart/form-data">
     @csrf 
     <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -38,7 +38,7 @@
                     <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-primary">Ikut Pelatihan</a>
                 @else --}}
                 @foreach($datas_transaction as $key2=>$value2)
-                    @if ($value2->training_id == $value->id)
+                    @if ($value2->Status == "Sedang Mengikuti")
                         <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-success">Lanjut Pelatihan</a>
                     @else
                         <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-primary">Ikut Pelatihan</a>
@@ -61,21 +61,16 @@
     </tr>
   </thead>
   <tbody>
+      @php $no = 1; @endphp
+      @foreach($datas_transaction as $key=>$value)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <td scope="row">{{ $no }}</td>
+      <td>{{ $value->name_training}}</td>
+      <td>{{ $value->Status}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-    </tr>
+    @php $no++; @endphp
+    @endforeach
+    
   </tbody>
 </table>
 </div>
