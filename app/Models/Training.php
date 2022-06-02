@@ -19,6 +19,11 @@ class Training extends Model
         'tgl_rilis',
         'kualitas',
         'detail_pelatihan',
-        'trainer'    
+        'trainer'
     ];
+
+    public function certificate()
+    {
+        return $this->belongsTo(Certificate::class);
+    }
 }

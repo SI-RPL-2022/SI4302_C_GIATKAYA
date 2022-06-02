@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdmController;
+use App\Http\Controllers\CertificateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -51,6 +52,9 @@ Auth::routes();
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masyarakatHome'])->name('masyarakat.home')->middleware('is_masyarakat');
+Route::get('masyarakat/certificate', [CertificateController::class, 'index'])->name('masyarakat.certificate.index')->middleware('is_masyarakat');
+Route::get('masyarakat/certificate/search', [CertificateController::class, 'search'])->name('masyarakat.certificate.search')->middleware('is_masyarakat');
+Route::get('masyarakat/certificate/{certificate}/download', [CertificateController::class, 'download'])->name('masyarakat.certificate.download')->middleware('is_masyarakat');
 
 //Routes Informasi Pekerjaan
 Route::get('infokerja', [App\Http\Controllers\infokerjaController::class, 'index']);

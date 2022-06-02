@@ -150,6 +150,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
   </head>
 
   <body>
@@ -250,7 +251,7 @@
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
 
-                    href=""><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
+                    href="{{ route('masyarakat.certificate.index') }}"><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
 
                 </a>
           </ul>
