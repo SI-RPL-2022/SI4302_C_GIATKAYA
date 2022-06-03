@@ -84,7 +84,7 @@
                                             <div class="panel panel-info">
                                                 <div class="panel-heading">
                                                     <div class="placeholder" align="center">
-                                                        <img src="{{asset('image/'.$user->foto_profil)}}" alt="Generic placeholder thumbnail">
+                                                        <img src="{{asset('image/'.$user->foto_profil)}}" class="img-circle">
                                                     </div>
                                                 </div>
                                                 <div class="panel-body">

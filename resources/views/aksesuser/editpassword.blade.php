@@ -10,15 +10,9 @@
     </div>
 <form method="post" action="{{ url('aksesdata/update-password/'.$data->id) }}" class="form-horizontal">
     @csrf
-    <div class="panel panel-info" style="margin-top: 20px;">
+    <div class="panel panel-info" style="margin-top: 30px;">
         <div class="panel-heading" align="center" ><strong>Change Password GiatKaya<strong></div>
             <div class="panel-body">
-                <div class="form-group">
-                    <label for="first_name" class="col-xs-4 control-label">Password Lama</label>
-                    <div class="col-xs-5">
-                        <input type="password" class="form-control" name="password_lama">
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="last_name" class="col-xs-4 control-label">Password Baru</label>
                     <div class="col-xs-5">

@@ -72,25 +72,12 @@ class DataUserController extends Controller
         $data = User::find($id);        
 
         $validate = $request->validate([
-            'password_lama' => 'required|string|min:8',
             'password' => 'required|string|confirmed|min:8'                      
-        ]);
-    
-        $password_lama = $request->password_lama;        
+        ]);       
         
-        if(Hash::check($password_lama, $data->password)){
-            if($password_lama != $request->password){
                 $data->password = Hash::make($request->password);
                 $data->save();
 
-                return redirect(route('datauser'))->with('success', 'Password Berhasil Diubah');
-            }                
-            else{
-                return redirect()->back()->with("error","Password Baru dan Password Lama Tidak Boleh Sama");
-            }
-        }else{
-            return redirect()->back()->with("error","Password Lama yang Anda Masukkan Salah");
-        }                   
-
+                return redirect(route('datauser'))->with('success', 'Password Berhasil Diubah');              
     }
 }
