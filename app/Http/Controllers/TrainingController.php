@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Training;
 use Illuminate\Support\Facades\File;
+use App\Models\TrainingTransaction;
 
 class TrainingController extends Controller
 {
@@ -128,6 +129,15 @@ class TrainingController extends Controller
         return view('training.index', [
             "datas" => $data,
         ]);
+    }
+    public function status(Request $request){
+        $id=$request->training_id;
+        $training_transaction = TrainingTransaction::find($id);
+        $training_transaction->status = "Selesai";
+        $training_transaction->save();
+        // $datas = Training::all();
+
+        return redirect('/masyarakat/training');
     }
 }
     

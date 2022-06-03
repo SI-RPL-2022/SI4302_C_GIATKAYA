@@ -70,9 +70,11 @@ Route::get('training/edit/{id}', [App\Http\Controllers\TrainingController::class
 Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::class, 'update']);
 Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
 Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
+Route::post('masyarakat/training', [TrainingController::class, 'status'])->name('status');
 
 // Route Training Masyarakat
-Route::get('masyarakat/training', [App\Http\Controllers\UserTrainingController::class, 'index']);
+Route::get('masyarakat/training', [App\Http\Controllers\UserTrainingController::class, 'index'])->name('masyarakat.training.index');
+Route::post('masyarakat/training/search/{id}', [App\Http\Controllers\UserTrainingController::class, 'search'])->name('masyarakat.training.searching');
 Route::get('masyarakat/training/{id}', [App\Http\Controllers\UserTrainingController::class, 'show']);
 Route::post('masyarakat/training/{id}/store', [App\Http\Controllers\UserTrainingController::class, 'store']);
 Route::get('masyarakat/training/{id}/detail', [App\Http\Controllers\UserTrainingController::class, 'detail']);

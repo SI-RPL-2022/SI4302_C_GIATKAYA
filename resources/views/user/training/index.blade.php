@@ -6,7 +6,7 @@
 </div>
 <div class="p-3">
 
-<form action="/masyarakat/training/" method="post" enctype="multipart/form-data">
+<form action="/masyarakat/training/search/{id}" method="post" enctype="multipart/form-data">
     @csrf 
     <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -38,7 +38,7 @@
                     <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-primary">Ikut Pelatihan</a>
                 @else --}}
                 @foreach($datas_transaction as $key2=>$value2)
-                    @if ($value2->training_id == $value->id)
+                    @if ($value2->Status == "Sedang Mengikuti")
                         <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-success">Lanjut Pelatihan</a>
                     @else
                         <a href="/masyarakat/training/{{ $value->id }}" class="btn btn-primary">Ikut Pelatihan</a>
@@ -50,6 +50,32 @@
         @endforeach
     </div>
 </div>
+
+<div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Nama Pelatihan</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+      @php $no = 1; @endphp
+      @foreach($datas_transaction as $key=>$value)
+    <tr>
+      <td scope="row">{{ $no }}</td>
+      <td>{{ $value->name_training}}</td>
+      <td>{{ $value->Status}}</td>
+    </tr>
+    @php $no++; @endphp
+    @endforeach
+    
+  </tbody>
+</table>
+</div>
+
+
 
 <style>
     .flex-container {

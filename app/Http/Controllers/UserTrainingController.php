@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Training;
 use App\Models\TrainingTransaction;
 
@@ -18,6 +19,11 @@ class UserTrainingController extends Controller
         $datas = Training::all();
 
         $datas_transaction = TrainingTransaction::where('user_id','=',auth()->user()->id)->get();
+        $datas_transaction = DB::table('training_transaction')
+                            ->join('training', 'training.id', '=', 'training_transaction.training_id')
+                            ->get();
+        // return $datas_transaction;
+
         if ($datas_transaction->isEmpty()) {
             $datas_transaction[] = (object) array(
                 'id' => 0, 
@@ -86,8 +92,10 @@ class UserTrainingController extends Controller
     {
         $datas = Training::find($id);
         $datas_other = Training::where('id','!=',$id)->take(4)->get();
+        $training_trsc= TrainingTransaction::where('training_id','=',$datas->id)->where('user_id','=',auth()->user()->id)->first();
+
         // dd($datas_other);
-        return view('user.training.detail', compact('datas', 'datas_other'));
+        return view('user.training.detail', compact('datas', 'datas_other','training_trsc'));
     }
 
     /**
@@ -122,5 +130,24 @@ class UserTrainingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request){
+        $jenis_training = $request->jenis_training;
+        $data = DB::table('training')->where('jenis_training', 'like', "%".$jenis_training."%")->get();
+
+        $datas_transaction = TrainingTransaction::where('user_id','=',auth()->user()->id)->get();
+        if ($datas_transaction->isEmpty()) {
+            $datas_transaction[] = (object) array(
+                'id' => 0, 
+                'user_id' => 0, 
+                'training_id' => 0
+            );
+        }
+
+        return view('user.training.index', [
+            "datas" => $data,
+            "datas_transaction" => $datas_transaction,
+        ]);
     }
 }
