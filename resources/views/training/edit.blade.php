@@ -37,10 +37,6 @@
             <input type="text" class="form-control form" name="durasi" value="{{ $model->durasi }}">
         </div>
         <div class="form-group">
-            <label for="last_name">Rilis</label>
-            <input type="date" class="form-control form" name="tgl_rilis" value="{{ $model->tgl_rilis }}">
-        </div>
-        <div class="form-group">
             <label for="last_name">Kualitas</label>
             <input type="text" class="form-control form" name="kualitas" value="{{ $model->kualitas }}">
         </div>
@@ -54,7 +50,7 @@
         </div>
         <div class="form-group">
             <label for="formFile">Cover Thumbnail</label>
-            <input type="file" class="form-control form" name="cover_new">
+            <input type="file" name="cover_new">
             <input type="text" name="cover" value="{{ $model->cover }}" hidden>
             <img src="{{ asset('image/'.$model->cover) }}" style="width: 190px; margin-top: 10px;" alt="">
         </div>

@@ -182,6 +182,9 @@
         .f-right {
             float: right;
         }
+        #someId .thumbnail{
+    display: inline-flex;
+}
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -249,7 +252,7 @@
                     href="/masyarakat/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                
-                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+                    href="/pinjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja

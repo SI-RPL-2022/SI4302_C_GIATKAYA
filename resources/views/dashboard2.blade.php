@@ -236,7 +236,7 @@
           <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">MENU</a>
           <a class="list-group-item list-group-item-action list-group-item-light p-3" href=""><i class="fa fa-dashboard me-2"></i>&nbsp; Dashboard</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                     
-                    href=""><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
+                    href="{{ route('masyarakat.training.index') }}"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
 
