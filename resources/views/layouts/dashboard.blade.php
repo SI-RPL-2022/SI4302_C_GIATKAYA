@@ -16,7 +16,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/6de6e67382.js" crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
-    <style>
+    <style type="text/css">
+      .pertama {
+        color: #00bfff;
+       }
         /*
         * Base structure
         */
@@ -25,6 +28,7 @@
         body {
             padding-top: 50px;
         }
+        
 
 
         /*
@@ -252,7 +256,7 @@
                     href="{{ url('/aksesdata') }}"><i class="fas fa-regular fa-user me-2"></i>&nbsp; Data Profile User
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-                    href=""><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
+                    href="/BuatSertif"><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
                 </a>
                 @if (auth()->user()->is_admin==1)
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
@@ -366,6 +370,34 @@
 .then((willDelete) => {
   if (willDelete) {
       window.location = "infokerja/delete/"+idkerja+""
+    swal("Data berhasil di hapus!", {
+      icon: "success",
+    });
+  } else {
+    swal("Data tidak jadi di hapus", {
+      icon: "info",
+    });
+  }
+});
+        });
+        
+    </script>
+    
+    <!-- Alert delete Admin CRUD data sertif -->
+    <script>
+        $('.delete4').click(function(){
+            var idsertif = $(this). attr('data-id');
+            var namasertif = $(this). attr('data-nama');
+            swal({
+  title: "Apa kamu yakin?",
+  text: "Setelah dihapus, Anda tidak akan dapat memulihkan data informasi pekerjaan tentang "+namasertif+" ini!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+      window.location = "BuatSertif/delete/"+namasertif+""
     swal("Data berhasil di hapus!", {
       icon: "success",
     });
