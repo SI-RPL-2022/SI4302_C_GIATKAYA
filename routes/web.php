@@ -7,7 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\TrainingController;
-
+use App\Http\Controllers\UserTrainingController;
 use App\Http\Controllers\infokerjaController;
 
 
@@ -32,12 +32,12 @@ Route::get('/', function () {
 // Route::get('/register', [RegisterController::class, 'registrasi']);
 // Route::post('/register', [RegisterController::class, 'dashboard']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-Route::get('/dashboard2', function () {
-    return view('dashboard2');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+// Route::get('/dashboard2', function () {
+//     return view('dashboard2');
+// });
 
 
 //Route::get('/training', function () {
@@ -103,3 +103,5 @@ Route::get('aksesdata/delete/{id}', [App\Http\Controllers\DataUserController::cl
 Route::get('/aksesdata/edit-password/{id}', [App\Http\Controllers\DataUserController::class, 'editPasswordProfile']);
 Route::post('/aksesdata/update-password/{id}', [App\Http\Controllers\DataUserController::class, 'updatePasswordProfile']);
 Route::post('/aksesdata/search/{id}', [App\Http\Controllers\DataUserController::class, 'search'])->name('searching');
+
+
