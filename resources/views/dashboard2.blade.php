@@ -252,7 +252,6 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
 
                     href="{{ route('masyarakat.certificate.index') }}"><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
-
                 </a>
           </ul>
           <ul class="nav nav-sidebar">

@@ -8,6 +8,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\UserTrainingController;
+use App\Http\Controllers\BuatSertifController;
+
 use App\Http\Controllers\infokerjaController;
 
 
@@ -105,3 +107,11 @@ Route::post('/aksesdata/update-password/{id}', [App\Http\Controllers\DataUserCon
 Route::post('/aksesdata/search/{id}', [App\Http\Controllers\DataUserController::class, 'search'])->name('searching');
 
 
+//Routes Mmebuat Sertifikat
+Route::get('BuatSertif', [App\Http\Controllers\BuatSertifController::class, 'index']);
+Route::get('BuatSertif/create', [App\Http\Controllers\BuatSertifController::class, 'create']);
+Route::post('BuatSertif/store', [App\Http\Controllers\BuatSertifController::class, 'store']);
+Route::get('BuatSertif/edit/{id}', [App\Http\Controllers\BuatSertifController::class, 'edit']);
+Route::post('BuatSertif/update/{id}', [App\Http\Controllers\BuatSertifController::class, 'update']);
+Route::get('BuatSertif/delete/{id}', [App\Http\Controllers\BuatSertifController::class, 'destroy']);
+Route::post('/BuatSertif/search/{id}', [BuatSertifController::class, 'search'])->name('searching');

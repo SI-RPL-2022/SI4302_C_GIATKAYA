@@ -173,7 +173,7 @@
                     href=""><i class="fas fa-regular fa-user me-2"></i>&nbsp; Profile
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-                    href=""><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
+                    href="/BuatSertif"><i class="fa-solid fa-file-pen me-2"></i>&nbsp; Create Certificate
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fa-solid fa-list-check me-2"></i>&nbsp; Validation User
