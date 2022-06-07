@@ -115,3 +115,15 @@ Route::get('BuatSertif/edit/{id}', [App\Http\Controllers\BuatSertifController::c
 Route::post('BuatSertif/update/{id}', [App\Http\Controllers\BuatSertifController::class, 'update']);
 Route::get('BuatSertif/delete/{id}', [App\Http\Controllers\BuatSertifController::class, 'destroy']);
 Route::post('/BuatSertif/search/{id}', [BuatSertifController::class, 'search'])->name('searching');
+
+//Routes Pengembalian Pinjaman
+Route::get('/pinjaman', function () {
+    return view('pinjaman.pengembalian');
+});
+Route::get('/pinjaman/form', function () {
+    return view('pinjaman.formpengembalian');
+});
+
+Route::get('/pinjaman/detail', function () {
+    return view('pinjaman.keterangan');
+});
