@@ -11,7 +11,7 @@
         <tr>
             <th>Nama Sertifikat</th>
             <th>Judul Pelatihan</th>
-            <th>Nama Penyelenggara</th>
+            <th>Trainer</th>
             <th colspan="2">Aksi</th>
         </tr>
         @foreach($datas as $key=>$value)

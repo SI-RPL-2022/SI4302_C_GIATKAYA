@@ -16,7 +16,7 @@
             <input type="text" class="form-control form" name="judul_pelatihan">
         </div> 
         <div class="form-group">
-            <label for="last_name">Nama Penyelenggara</label>
+            <label for="last_name">Trainer</label>
             <input type="text" class="form-control form" name="nama_penyelenggara">
         </div>
         <div class="form-group">

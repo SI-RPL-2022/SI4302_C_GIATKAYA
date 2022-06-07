@@ -265,7 +265,7 @@
                     href=""><i class="fas fa-regular fa-user me-2"></i>&nbsp; Profile
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-                    href="/BuatSertif"><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
+                    href="{{ route('masyarakat.certificate.index') }}"><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
                 </a>
                 @endif
 
