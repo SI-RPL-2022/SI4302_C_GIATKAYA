@@ -3,7 +3,7 @@
 @section('content')
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Data Pinjaman Pengguna</h3>
+    <h3 class="panel-title"><i class="fas fa-regular fa-coins me-2"></i>&nbsp;Data Pinjaman Pengguna</h3>
   </div>
     <div class="main-body">
     
@@ -70,47 +70,72 @@
         <div class="panel-body">
                 <tr>
                     <td colspan="1">
-                    <form class="form-horizontal">
-                        <fieldset>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Nama Lengkap</label>
-                                <div class="col-md-8">
-                                <div class="input-group"><input id="fullName" name="fullName" placeholder="Nama Lengkap" class="form-control" required="true" value="" type="text"></div>
-                                </div>
+                      <form action="/html/tags/html_form_tag_action.cfm" class="form-horizontal">
+                        <div class="form-group">
+                          <label for="first_name" class="col-xs-4 control-label">Nama Lengkap</label>
+                          <div class="col-xs-5">
+                            <input type="text" class="form-control" id="first_name" name="first_name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="last_name" class="col-xs-4 control-label">Email</label>
+                          <div class="col-xs-5">
+                            <input type="text" class="form-control" id="last_name" name="last_name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="first_name" class="col-xs-4 control-label">Nomor Handphone</label>
+                          <div class="col-xs-5">
+                            <input type="text" class="form-control" id="first_name" name="first_name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="last_name" class="col-xs-4 control-label">Metode Pembayaran</label>
+                          <div class="col-xs-5">
+                            <input type="text" class="form-control" id="last_name" name="last_name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="first_name" class="col-xs-4 control-label">Jumlah Bayar</label>
+                          <div class="col-xs-5">
+                            <input type="text" class="form-control" id="first_name" name="first_name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="first_name" class="col-xs-4 control-label">Bukti Pembayaran</label>
+                          <div class="col-xs-5">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#smallShoes">
+                            <i class="glyphicon glyphicon-open-file"></i>
+                          </button>
+
+                            <!-- The modal -->
+                            <div class="modal fade" id="smallShoes" tabindex="-1" role="dialog" aria-labelledby="modalLabelSmall" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+
+                            <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                              <h4 class="modal-title" id="modalLabelSmall">Bukti Pembayaran</h4>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Email</label>
-                                <div class="col-md-8 ">
-                                <div class="input-group"><input id="addressLine1" name="addressLine1" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
-                                </div>
+
+                            <div class="modal-body">
+                              Modal content...
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Nomor Handphone</label>
-                                <div class="col-md-8">
-                                <div class="input-group"><input id="addressLine2" name="addressLine2" placeholder="Nomor Handphone" class="form-control" required="true" value="" type="text"></div>
-                                </div>
+
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Metode Pembayaran</label>
-                                <div class="col-md-8">
-                                <div class="input-group"><input id="city" name="city" placeholder="Metode Pembayaran" class="form-control" required="true" value="" type="text"></div>
-                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Jumlah Bayar</label>
-                                <div class="col-md-8">
-                                <div class="input-group"><input id="state" name="state" placeholder="Jumlah Bayar" class="form-control" required="true" value="" type="text"></div>
-                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"></label>
-                                <div class="col-md-8 inputGroupContainer">
-                                <button class="btn btn-info">Bayar</button>
-                                <button class="btn btn-danger">Kembali</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-xs-offset-4 col-xs-5">
+                            <button type="submit" class="btn btn-info">Bayar</button>
+                            <button type="submit" class="btn btn-danger">Cancel</button>
+                          </div>
+                        </div>
+                      </form>
                     </td>
                 </tr>
         </div>

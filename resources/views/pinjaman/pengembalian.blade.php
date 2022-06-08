@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 @section('title','Pengembalian Pinjaman')
 @section('content')
-<div>
-    <h2 class="text-center" style="margin-bottom: 30px;">Daftar Tagihan Pinjaman</h2>
-</div>
+  <div class="panel panel-default">
+    <h2 class="text-center" style="margin-bottom: 20px;">Daftar Tagihan Pinjaman</h2>
+  </div>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Data Pinjaman Pengguna</h3>
+    <h3 class="panel-title"><i class="fas fa-regular fa-coins me-2"></i>&nbsp;Data Pinjaman Pengguna</h3>
   </div>
     <div class="main-body">
     
