@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdmController;
+use App\Http\Controllers\ApproveAdminController;
+use App\Http\Controllers\LoanController;
+use App\Http\Controllers\LoanBillController;
 use App\Http\Controllers\CertificateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -117,13 +120,34 @@ Route::get('BuatSertif/delete/{id}', [App\Http\Controllers\BuatSertifController:
 Route::post('/BuatSertif/search/{id}', [BuatSertifController::class, 'search'])->name('searching');
 
 //Routes Pengembalian Pinjaman
-Route::get('/pinjaman', function () {
-    return view('pinjaman.pengembalian');
-});
-Route::get('/pinjaman/form', function () {
-    return view('pinjaman.formpengembalian');
-});
+Route::get('masyarakat/pinjaman', [App\Http\Controllers\PengembalianController::class, 'index']);
 
-Route::get('/pinjaman/detail', function () {
-    return view('pinjaman.keterangan');
-});
+Route::get('/pinjaman/form/{id}', [App\Http\Controllers\PengembalianController::class, 'edit']);
+Route::post('/pinjaman/detail/{id}', [App\Http\Controllers\PengembalianController::class, 'update']);
+
+Route::get('masyarakat/peminjaman', [LoanController::class, 'index'])->name('masyarakat.loan.index')->middleware('is_masyarakat');
+Route::get('masyarakat/peminjaman/create', [LoanController::class, 'create'])->name('masyarakat.loan.create')->middleware('is_masyarakat');
+Route::post('masyarakat/peminjaman', [LoanController::class, 'store'])->name('masyarakat.loan.store')->middleware('is_masyarakat');
+
+Route::get('masyarakat/pengembalian', [LoanBillController::class, 'index'])->name('masyarakat.bill.index')->middleware('is_masyarakat')->middleware('is_masyarakat');
+Route::get('masyarakat/pengembalian/{loan_bill}', [LoanBillController::class, 'create'])->name('masyarakat.bill.create')->middleware('is_masyarakat');
+Route::post('masyarakat/pengembalian/{loan_bill}', [LoanBillController::class, 'show'])->name('masyarakat.bill.show')->middleware('is_masyarakat');
+Route::patch('masyarakat/pengembalian/{loan_bill}/pay', [LoanBillController::class, 'update'])->name('masyarakat.bill.update')->middleware('is_masyarakat');
+
+//Routes Approve Pinjaman Admin
+Route::get('/approve', [App\Http\Controllers\ApproveAdminController::class, 'approveadmin'])->middleware('is_admin');
+Route::post('/approve/loan-success/{id}', [App\Http\Controllers\ApproveAdminController::class, 'approveLoanSuccess'])->middleware('is_admin');
+Route::get('/approve/loan-failed/{id}', [App\Http\Controllers\ApproveAdminController::class, 'approveLoanFailed'])->middleware('is_admin');
+Route::post('/approve/loan-bill/approve-success/{id}', [App\Http\Controllers\ApproveAdminController::class, 'approveLoanBillSuccess'])->middleware('is_admin');
+Route::post('/approve/loan-bill/approve-failed/{id}', [App\Http\Controllers\ApproveAdminController::class, 'approveLoanBillFailed'])->middleware('is_admin');
+Route::post('/approve/loan-bill/beri-keterangan/{id}', [App\Http\Controllers\ApproveAdminController::class, 'beriKeteranganLoanBill'])->middleware('is_admin');
+Route::post('/approve/loan-bill/validasi-lunas/{id}', [App\Http\Controllers\ApproveAdminController::class, 'validasiLunasLoanBill'])->middleware('is_admin');
+Route::post('/approve/update', [App\Http\Controllers\ApproveAdminController::class, 'update'])->name('update_status')->middleware('is_admin');
+Route::post('/approve/search/{id}', [App\Http\Controllers\ApproveAdminController::class, 'search'])->name('searching')->middleware('is_admin');
+//tab Pinjaman admin
+// Route::get('/tab1', function(){
+//     return view('approve.adminapprove');
+// });
+// Route::get('/tab2', function(){
+//     return view('approve.adminapprove');
+// });
