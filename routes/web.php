@@ -9,8 +9,8 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\TrainingController;
 
 use App\Http\Controllers\infokerjaController;
-
-
+use App\Http\Controllers\LoanBillController;
+use App\Http\Controllers\LoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +55,15 @@ Route::get('masyarakat/home', [App\Http\Controllers\HomeController::class, 'masy
 Route::get('masyarakat/certificate', [CertificateController::class, 'index'])->name('masyarakat.certificate.index')->middleware('is_masyarakat');
 Route::get('masyarakat/certificate/search', [CertificateController::class, 'search'])->name('masyarakat.certificate.search')->middleware('is_masyarakat');
 Route::get('masyarakat/certificate/{certificate}/download', [CertificateController::class, 'download'])->name('masyarakat.certificate.download')->middleware('is_masyarakat');
+
+Route::get('masyarakat/peminjaman', [LoanController::class, 'index'])->name('masyarakat.loan.index')->middleware('is_masyarakat');
+Route::get('masyarakat/peminjaman/create', [LoanController::class, 'create'])->name('masyarakat.loan.create')->middleware('is_masyarakat');
+Route::post('masyarakat/peminjaman', [LoanController::class, 'store'])->name('masyarakat.loan.store')->middleware('is_masyarakat');
+
+Route::get('masyarakat/pengembalian', [LoanBillController::class, 'index'])->name('masyarakat.bill.index')->middleware('is_masyarakat')->middleware('is_masyarakat');
+Route::get('masyarakat/pengembalian/{loan_bill}', [LoanBillController::class, 'create'])->name('masyarakat.bill.create')->middleware('is_masyarakat');
+Route::post('masyarakat/pengembalian/{loan_bill}', [LoanBillController::class, 'show'])->name('masyarakat.bill.show')->middleware('is_masyarakat');
+Route::patch('masyarakat/pengembalian/{loan_bill}/pay', [LoanBillController::class, 'update'])->name('masyarakat.bill.update')->middleware('is_masyarakat');
 
 //Routes Informasi Pekerjaan
 Route::get('infokerja', [App\Http\Controllers\infokerjaController::class, 'index']);
