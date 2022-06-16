@@ -1,8 +1,6 @@
-@extends('dashboard2')
+@extends('layouts.dashboard')
 
 @section('content')
-<div class="col-12 main">
-    <div class="row">
         <h1 class="page-header text-center border-bottom-unset">CERTIFICATION</h1>
     </div>
     <div class="row">
@@ -26,9 +24,9 @@
                                 <canvas id="pdf-{{ $certificate->id }}" class="pdf w-100 h-auto"></canvas>
                             </div>
                             <div class="panel-body">
-                                <p class="cert-title">{{ $certificate->training->name_training }}</p>
-                                <p class="cert-subtitle">{{ $certificate->training->jenis_training }}</p>
-                                <p class="cert-description">{{ $certificate->training->trainer }}</p>
+                                <p class="cert-title"></p>
+                                <p class="cert-subtitle"></p>
+                                <p class="cert-description"></p>
                             </div>
                             <div class="panel-footer text-center">
                                 <a href="{{ route('masyarakat.certificate.download', $certificate->id) }}" class="button btn btn-primary cert-button">Download</a>
@@ -44,8 +42,6 @@
             </div>
         </div>
         <div class="col-lg-2"></div>
-    </div>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
 @foreach ($certificates as $certificate)

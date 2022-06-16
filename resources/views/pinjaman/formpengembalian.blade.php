@@ -10,7 +10,7 @@
          <div class="panel-body">
                   <tr>
                      <td colspan="1">
-                        <form class="form-horizontal" style="margin-top: 10px;">
+                        <form method="POST" class="form-horizontal" action="{{ url('pinjaman/detail/'.$pengembalian->id) }}" enctype="multipart/form-data" style="margin-top: 10px;">
                            <fieldset>
                               <div class="form-group">
                                  <label class="col-md-3 control-label">Nama Lengkap</label>
@@ -61,8 +61,8 @@
                               <div class="form-group">
                                  <label class="col-md-3 control-label"></label>
                                  <div class="col-md-8 inputGroupContainer">
-                                 <button class="btn btn-info">Submit</button>
-                                 <button class="btn btn-danger">Cancel</button>
+                                 <a class="btn btn-info">Submit</a>
+                                 <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
                                  </div>
                               </div>
                            </fieldset>

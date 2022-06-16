@@ -8,8 +8,9 @@
   <div class="panel-heading">
     <h3 class="panel-title"><i class="fas fa-regular fa-coins me-2"></i>&nbsp;Data Pinjaman Pengguna</h3>
   </div>
+
     <div class="main-body">
-    
+    @foreach ($pengembalian as $key=>$value)
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
@@ -17,10 +18,10 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>John Doe</h4>
+                      <h4>{{ $value->nama_lengkap }}</h4>
                       <p class="text-muted font-size-sm">Jl Garuda, Pandeglang</p>
-                      <button class="btn btn-info">Edit Profile</button>
-                      <button class="btn btn-danger">Bayar Tagihan</button>
+                      <a href="" class="btn btn-info">Edit Profile</a>
+                      <a href="{{ url('pinjaman/form/'.$value->id) }}" class="btn btn-danger">Bayar Tagihan</a>
                     </div>
                   </div>
                 </div>
@@ -34,7 +35,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      {{ $value->nama_lengkap }}
                     </div>
                   </div>
                   <hr>
@@ -43,7 +44,7 @@
                       <h6 class="mb-0">NIK</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                      {{ $value->nik }}
                     </div>
                   </div>
                   <hr>
@@ -52,7 +53,7 @@
                       <h6 class="mb-0">Usaha</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      {{ $value->usaha }}
                     </div>
                   </div>
                   <hr>
@@ -79,9 +80,19 @@
         <th>Nama Lengkap</th>
         <th>Email</th>
         <th>Nomor Handphone</th>
-        <th>Metode Pembayaran</th>
-        <th>Jumlah Bayar</th>
+        <th>Jumlah Pinjaman</th>
+        <th>Status</th>
       </tr>
+    <?php $no = 1; ?>
+      <tr>
+        <td>{{ $no++ }}</td>
+        <td>{{ $value->nama_lengkap }}</td>
+        <td>{{ $value->email }}</td>
+        <td>{{ $value->no_hp }}</td>
+        <td>{{ $value->pinjaman }}</td>
+        <td>{{ $value->status_bayar }}</td>
+      </tr>
+    @endforeach
   </table>
 </div>
 @endsection

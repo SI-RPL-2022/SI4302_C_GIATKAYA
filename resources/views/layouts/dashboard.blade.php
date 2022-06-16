@@ -241,6 +241,86 @@
         .shadow-none {
             box-shadow: none!important;
         }
+        .rounded-input button {
+            border-radius: 42px 0px 0px 42px;
+            border-right: none;
+        }
+
+        .rounded-input button i {
+            font-size: 24sp;
+        }
+
+        .rounded-input input {
+            border-radius: 0px 42px 42px 0px;
+            border-left: none;
+        }
+
+        .border-bottom-unset {
+            border-bottom: unset;
+        }
+
+        .fw-bolder {
+            font-weight: bolder;
+        }
+
+        .cert-panel {
+            border-radius: 20px;
+            border: 1px solid #31A8CD;
+            box-shadow: 0 4px 8px 1px #31A8CD;
+        }
+
+        .cert-panel .panel-heading {
+            padding: unset;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .cert-panel .panel-footer {
+            border-radius: 0px 0px 20px 20px;
+            background-color: unset;
+            border-top: unset;
+        }
+
+        .pdf {
+            max-width: 100% !important;
+            height: auto !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .cert-title {
+            font-weight: bolder;
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+
+        .cert-subtitle {
+            font-size: 16px;
+            color: #31A8CD;
+            margin-bottom: 15px;
+        }
+
+        .cert-description {
+            font-size: 16px;
+            font-weight: bolder;
+            color: black;
+            opacity: 0.5;
+        }
+
+        .cert-button {
+            font-size: 14px;
+            font-weight: bolder;
+            color: white;
+            background-color: #31A8CD;
+            border: 1px solid black;
+            border-radius: 10px;
+            /* width: 200px; */
+        }
+
+        .mb-3 {
+            margin-bottom: 30px;
+        }
+        .panel{
+            box-shadow: 2px 2px 2px rgba(17, 205, 239), 0 1px 2px rgba(17, 205, 239);
+        }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -288,7 +368,7 @@
                     href="/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
-                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal <i class=""></i>
+                    href="/approve"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal <i class=""></i>
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href="/infokerja"><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
@@ -308,7 +388,7 @@
                     href="/masyarakat/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                
-                    href="/pinjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+                    href="/masyarakat/pinjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
