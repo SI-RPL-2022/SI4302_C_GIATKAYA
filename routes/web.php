@@ -1,9 +1,6 @@
 <?php
 
 use App\Http\Controllers\AdmController;
-use App\Http\Controllers\ApproveAdminController;
-use App\Http\Controllers\LoanController;
-use App\Http\Controllers\LoanBillController;
 use App\Http\Controllers\CertificateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -59,15 +56,6 @@ Route::get('masyarakat/certificate', [CertificateController::class, 'index'])->n
 Route::get('masyarakat/certificate/search', [CertificateController::class, 'search'])->name('masyarakat.certificate.search')->middleware('is_masyarakat');
 Route::get('masyarakat/certificate/{certificate}/download', [CertificateController::class, 'download'])->name('masyarakat.certificate.download')->middleware('is_masyarakat');
 
-Route::get('masyarakat/peminjaman', [LoanController::class, 'index'])->name('masyarakat.loan.index')->middleware('is_masyarakat');
-Route::get('masyarakat/peminjaman/create', [LoanController::class, 'create'])->name('masyarakat.loan.create')->middleware('is_masyarakat');
-Route::post('masyarakat/peminjaman', [LoanController::class, 'store'])->name('masyarakat.loan.store')->middleware('is_masyarakat');
-
-Route::get('masyarakat/pengembalian', [LoanBillController::class, 'index'])->name('masyarakat.bill.index')->middleware('is_masyarakat')->middleware('is_masyarakat');
-Route::get('masyarakat/pengembalian/{loan_bill}', [LoanBillController::class, 'create'])->name('masyarakat.bill.create')->middleware('is_masyarakat');
-Route::post('masyarakat/pengembalian/{loan_bill}', [LoanBillController::class, 'show'])->name('masyarakat.bill.show')->middleware('is_masyarakat');
-Route::patch('masyarakat/pengembalian/{loan_bill}/pay', [LoanBillController::class, 'update'])->name('masyarakat.bill.update')->middleware('is_masyarakat');
-
 //Routes Informasi Pekerjaan
 Route::get('infokerja', [App\Http\Controllers\infokerjaController::class, 'index']);
 Route::get('infokerja/create', [App\Http\Controllers\infokerjaController::class, 'create']);
@@ -116,7 +104,6 @@ Route::get('/aksesdata/edit-password/{id}', [App\Http\Controllers\DataUserContro
 Route::post('/aksesdata/update-password/{id}', [App\Http\Controllers\DataUserController::class, 'updatePasswordProfile']);
 Route::post('/aksesdata/search/{id}', [App\Http\Controllers\DataUserController::class, 'search'])->name('searching');
 
-
 //Routes Mmebuat Sertifikat
 Route::get('BuatSertif', [App\Http\Controllers\BuatSertifController::class, 'index']);
 Route::get('BuatSertif/create', [App\Http\Controllers\BuatSertifController::class, 'create']);
@@ -157,3 +144,16 @@ Route::get('/approve/search/', [App\Http\Controllers\ApproveAdminController::cla
 // Route::get('/tab2', function(){
 //     return view('approve.adminapprove');
 // });
+//Routes Apply Kerja
+Route::get('masyarakat/lapangan-kerja', [App\Http\Controllers\LapanganKerjaController::class, 'showAllLapanganKerja'])->middleware('is_masyarakat');
+Route::get('masyarakat/lapangan-kerja/cari', [App\Http\Controllers\LapanganKerjaController::class, 'cariAllLapanganKerja'])->middleware('is_masyarakat');
+Route::get('masyarakat/lapangan-kerja/riyawat-lamaran', [App\Http\Controllers\LapanganKerjaController::class, 'riwayatLamaran'])->middleware('is_masyarakat');
+Route::get('masyarakat/lapangan-kerja/riyawat-lamaran/hapus/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'hapusriwayatLamaran'])->middleware('is_masyarakat');
+Route::get('masyarakat/lapangan-kerja/riyawat-lamaran/download-berkas/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'downloadBerkasRiwayatLamaran'])->middleware('is_masyarakat');
+Route::get('masyarakat/lapangan-kerja/detail/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'showDetailLapanganKerja'])->middleware('is_masyarakat');
+Route::get('masyarakat/lapangan-kerja/lamar/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'lamarLapanganKerja'])->middleware('is_masyarakat');
+Route::post('masyarakat/lapangan-kerja/lamar/store', [App\Http\Controllers\LapanganKerjaController::class, 'postLamarLapanganKerja'])->middleware('is_masyarakat');
+Route::get('/data-riyawat-lamaran', [App\Http\Controllers\LapanganKerjaController::class, 'dataRiwayatLamaran'])->middleware('is_admin');
+Route::get('/data-riyawat-lamaran/cari', [App\Http\Controllers\LapanganKerjaController::class, 'caridataRiwayatLamaran'])->middleware('is_admin');
+Route::get('/data-riyawat-lamaran/delete/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'deletedataRiwayatLamaran'])->middleware('is_admin');
+Route::get('/data-riyawat-lamaran/download/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'downloaddataRiwayatLamaran'])->middleware('is_admin');

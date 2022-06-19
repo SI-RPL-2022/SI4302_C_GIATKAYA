@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             <label for="first_name">Deskripsi Lowongan</label>
-            <input type="text" class="form-control form" name="deskripsi">
+            <textarea name="deskripsi" class="form-control form" id="editor"></textarea>            
         </div> 
         <div class="form-group">
             <label for="last_name">Lokasi</label>
@@ -35,4 +35,12 @@
             <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
             <button type="reset" class="btn btn-warning" value="Reset"><i class="fa-solid fa-arrows-rotate"></i></button>
     </form>
+<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection
