@@ -148,7 +148,7 @@ Route::post('/approve/loan-bill/approve-success/{id}', [App\Http\Controllers\App
 Route::post('/approve/loan-bill/approve-failed/{id}', [App\Http\Controllers\ApproveAdminController::class, 'approveLoanBillFailed'])->middleware('is_admin');
 Route::post('/approve/loan-bill/beri-keterangan/{id}', [App\Http\Controllers\ApproveAdminController::class, 'beriKeteranganLoanBill'])->middleware('is_admin');
 Route::post('/approve/loan-bill/validasi-lunas/{id}', [App\Http\Controllers\ApproveAdminController::class, 'validasiLunasLoanBill'])->middleware('is_admin');
-Route::post('/approve/update', [App\Http\Controllers\ApproveAdminController::class, 'update'])->name('update_status')->middleware('is_admin');
+Route::post('/approve/update', [App\Http\Controllers\ApproveAdminController::class, 'update'])->name('update_sts')->middleware('is_admin');
 Route::get('/approve/search/', [App\Http\Controllers\ApproveAdminController::class, 'search'])->name('searching')->middleware('is_admin');
 //tab Pinjaman admin
 // Route::get('/tab1', function(){

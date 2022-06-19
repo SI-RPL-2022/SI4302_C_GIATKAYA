@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-lg-3" style="height: 100%; padding-right: 0px;">
                             {{-- <img src="{{ asset('image/'.auth()->user()->foto) }}" alt="" srcset="" class="pd-img-user"> --}}
-                            <div style="width: 100%; height: 257.69px; background: url('{{ asset('image/'.auth()->user()->foto) }}'); background-size: cover;">
+                            <div style="width: 100%; height: 257.69px; background: url('{{ asset('image/'.auth()->user()->foto_profil) }}'); background-size: cover;">
 
                             </div>
                         </div>

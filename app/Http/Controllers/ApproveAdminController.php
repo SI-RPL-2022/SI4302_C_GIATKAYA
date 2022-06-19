@@ -104,12 +104,6 @@ class ApproveAdminController extends Controller
             $data2->save();
         }
        
-
-        // $data = ProfileUser::all();
-
-        // return view('verif-adm', [
-        //     "data_user" => $data,
-        // ]);
         return redirect('approve');
     }
 
