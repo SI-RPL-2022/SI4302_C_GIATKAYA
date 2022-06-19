@@ -4,16 +4,27 @@
 <div class="panel panel-default">
     <h2 class="text-center" style="margin-bottom: 20px;">Approve Pembayaran</h2>
 </div>
-  <form action="/approve/search/{id}" method="post" enctype="multipart/form-data">
-    @csrf 
-    <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-            <label class="form-label" for="nama_lengkap">Search by Nama</label>
-            <input type="search" id="nama_lengkap" name="nama_lengkap" class="form-control" placeholder="Search ...">
-        </div>
-        <button type="submit" class="btn btn-info">Cari</button>
-    </form>  
-  </form>
+        <form action="{{ url('/approve/search/') }}" method="get">
+            <div class="row" style="margin-top:10px;">
+                <div class="col-sm-2" style="padding-right: 0;">
+                    <select name="kategori" class="form-control" style="font-size:13px;">
+                        <option value="name">Nama</option>
+                        <option value="invoice">No. Invoice</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                <div class="col-sm-10" style="padding-left: 0;">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-info" type="submit">
+                                <i class="glyphicon glyphicon-search"></i> Cari
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </form>
       <ul class="nav nav-tabs"  style="margin-top: 20px;">
         <li class="active"><a data-toggle="tab" href="#tab1">Approve Pinjaman</a></li>
         <li><a data-toggle="tab" href="#tab2">List Pinjaman</a></li>
@@ -54,9 +65,9 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->email }}</td>
-                                    <td>{{ $value->amount }}</td>
+                                    <td>@rupiah($value->amount)</td>
                                     <td>{{ $value->duration }}</td>
-                                    <td>{{ $value->instalment }}</td>
+                                    <td>@rupiah($value->instalment)</td>
                                     <td>
                                         @if($value->status == 0)
                                             <span class="label label-info label-danger">Belum Approve</span>
@@ -238,8 +249,8 @@
                                 <td>{{ $value->invoice }}</td>
                                 <td>{{ $value->invoice_date }}</td>
                                 <td>{{ $value->due_date }}</td>
-                                <td>{{ $value->total }}</td>
-                                <td>{{ $value->instalment }}</td>
+                                <td>@rupiah($value->total)</td>
+                                <td>@rupiah($value->instalment)</td>
                                 <td>
                                     @if($value->full_name == NULL)
                                         -

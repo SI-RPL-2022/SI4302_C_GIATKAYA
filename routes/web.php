@@ -14,8 +14,6 @@ use App\Http\Controllers\UserTrainingController;
 use App\Http\Controllers\BuatSertifController;
 
 use App\Http\Controllers\infokerjaController;
-use App\Http\Controllers\LoanBillController;
-use App\Http\Controllers\LoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,10 +127,9 @@ Route::get('BuatSertif/delete/{id}', [App\Http\Controllers\BuatSertifController:
 Route::post('/BuatSertif/search/{id}', [BuatSertifController::class, 'search'])->name('searching');
 
 //Routes Pengembalian Pinjaman
-Route::get('masyarakat/pinjaman', [App\Http\Controllers\PengembalianController::class, 'index']);
-
-Route::get('/pinjaman/form/{id}', [App\Http\Controllers\PengembalianController::class, 'edit']);
-Route::post('/pinjaman/detail/{id}', [App\Http\Controllers\PengembalianController::class, 'update']);
+// Route::get('masyarakat/pinjaman', [App\Http\Controllers\PengembalianController::class, 'index']);
+// Route::get('/pinjaman/form/{id}', [App\Http\Controllers\PengembalianController::class, 'edit']);
+// Route::post('/pinjaman/detail/{id}', [App\Http\Controllers\PengembalianController::class, 'update']);
 
 Route::get('masyarakat/peminjaman', [LoanController::class, 'index'])->name('masyarakat.loan.index')->middleware('is_masyarakat');
 Route::get('masyarakat/peminjaman/create', [LoanController::class, 'create'])->name('masyarakat.loan.create')->middleware('is_masyarakat');
@@ -152,7 +149,7 @@ Route::post('/approve/loan-bill/approve-failed/{id}', [App\Http\Controllers\Appr
 Route::post('/approve/loan-bill/beri-keterangan/{id}', [App\Http\Controllers\ApproveAdminController::class, 'beriKeteranganLoanBill'])->middleware('is_admin');
 Route::post('/approve/loan-bill/validasi-lunas/{id}', [App\Http\Controllers\ApproveAdminController::class, 'validasiLunasLoanBill'])->middleware('is_admin');
 Route::post('/approve/update', [App\Http\Controllers\ApproveAdminController::class, 'update'])->name('update_status')->middleware('is_admin');
-Route::post('/approve/search/{id}', [App\Http\Controllers\ApproveAdminController::class, 'search'])->name('searching')->middleware('is_admin');
+Route::get('/approve/search/', [App\Http\Controllers\ApproveAdminController::class, 'search'])->name('searching')->middleware('is_admin');
 //tab Pinjaman admin
 // Route::get('/tab1', function(){
 //     return view('approve.adminapprove');

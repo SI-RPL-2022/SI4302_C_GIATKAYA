@@ -27,13 +27,9 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <div class="container">
+                                        <div class="">
                                             <p class="h3"><strong>{{ auth()->user()->name }}</strong></p>
                                             <p class="text fs-18">NIK : {{ auth()->user()->nik }}</p>
-                                            <div class="d-inline-flex">
-                                                <a href="" class="btn btn-primary">Edit Profile</a>
-
-                                            </div>
                                         </div>
                                         <hr class="hr-1">
                                     </tr>
@@ -52,8 +48,8 @@
             </div>
         </div>
     </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-lg-8">
+    <div class="row d-flex">
+        <div class="col-lg-12">
             <table id="example" class="table table-striped table-bordered dt" style="width:100%">
                 <thead>
                     <tr>
@@ -75,9 +71,9 @@
                             <td>{{ $bill->invoice }}</td>
                             <td>{{ $bill->invoice_date }}</td>
                             <td>{{ $bill->due_date }}</td>                            
-                            <td>{{ $bill->total_pembayaran }}</td>
-                            <td>{{ $bill->instalment }}</td>
-                            <td>{{ $bill->sisa_pembayaran }}</td>                            
+                            <td>@rupiah($bill->total_pembayaran)</td>
+                            <td>@rupiah($bill->instalment)</td>
+                            <td>@rupiah($bill->sisa_pembayaran)</td>                            
                             <td>
                                 @if($bill->full_name == NULL && $bill->phone == NULL && $bill->email == NULL && $bill->payment_method == NULL && $bill->ammount == NULL && $bill->payment_proof == NULL)
                                     -

@@ -17,7 +17,8 @@ class ApproveAdminController extends Controller
                                 'loans.status', 'loans.file_nik', 'loans.file_profesi', 'loans.file_pembiayaan',
                                 'loans.file_foto_usaha', 'loans.file_skt', 'loans.file_sku', 'loans.id', 'loans.user_id')
                         ->join('users', 'users.id', '=', 'loans.user_id')
-                        ->orderBy('loans.status', 'DESC')
+                        ->orderBy('loans.status', 'ASC')
+                        ->orderBy('loans.created_at', 'DESC')
                         ->get();
 
         $refund_loan = DB::table('loan_bills')
@@ -25,9 +26,11 @@ class ApproveAdminController extends Controller
                                 'loan_bills.full_name', 'loan_bills.phone', 'loan_bills.email', 'loan_bills.payment_method',
                                 'loan_bills.ammount', 'loan_bills.payment_proof', 'loan_bills.status', 'loans.instalment',
                                 'loan_bills.id', 'loan_bills.user_id', 'loan_bills.loan_id', 'loan_bills.status_cicilan',
-                                'loan_bills.status_pinjaman')
+                                'loan_bills.status_pinjaman','loan_bills.created_at')
                         ->join('users', 'users.id', '=', 'loan_bills.user_id')
-                        ->join('loans', 'loans.id', '=', 'loan_bills.loan_id')                        
+                        ->join('loans', 'loans.id', '=', 'loan_bills.loan_id')
+                        ->orderBy('loan_bills.created_at', 'DESC')
+                        ->orderBy('loan_bills.status_pinjaman', 'ASC')                        
                         ->get();
 
         return view('approve.adminapprove', [
@@ -37,11 +40,61 @@ class ApproveAdminController extends Controller
     }
 
     public function search(Request $request){
-        $nama_lengkap = $request->nama_lengkap;
-        $data = DB::table('pengembalian')->where('nama_lengkap', 'like', "%".$nama_lengkap."%")->get();
-        return view('approve.adminapprove', [
-            "data_user" => $data,
-        ]);
+        $kategori = $request->kategori;
+        $keyword = $request->search;
+        if ($kategori == "name" || $kategori == "email"){
+            $approve_loan = DB::table('loans')
+                        ->select('users.name', 'users.email', 'loans.amount', 'loans.duration', 'loans.instalment',
+                                'loans.status', 'loans.file_nik', 'loans.file_profesi', 'loans.file_pembiayaan',
+                                'loans.file_foto_usaha', 'loans.file_skt', 'loans.file_sku', 'loans.id', 'loans.user_id')
+                        ->join('users', 'users.id', '=', 'loans.user_id')
+                        ->where('users.'.$kategori, 'like', "%". $keyword . "%")
+                        ->orderBy('loans.status', 'ASC')
+                        ->orderBy('loans.created_at', 'DESC')
+                        ->get();
+            $refund_loan = DB::table('loan_bills')
+                        ->select('loan_bills.invoice', 'loan_bills.invoice_date', 'loan_bills.due_date', 'loan_bills.total',
+                                'loan_bills.full_name', 'loan_bills.phone', 'loan_bills.email', 'loan_bills.payment_method',
+                                'loan_bills.ammount', 'loan_bills.payment_proof', 'loan_bills.status', 'loans.instalment',
+                                'loan_bills.id', 'loan_bills.user_id', 'loan_bills.loan_id', 'loan_bills.status_cicilan',
+                                'loan_bills.status_pinjaman','loan_bills.created_at')
+                        ->join('users', 'users.id', '=', 'loan_bills.user_id')
+                        ->join('loans', 'loans.id', '=', 'loan_bills.loan_id')
+                        ->orderBy('loan_bills.created_at', 'DESC')
+                        ->orderBy('loan_bills.status_pinjaman', 'ASC')                        
+                        ->get();
+            return view('approve.adminapprove', [
+                "approve_loan" => $approve_loan,
+                "refund_loan" => $refund_loan,
+            ]);
+        } elseif ($kategori == "invoice"){
+            $approve_loan = DB::table('loans')
+                        ->select('users.name', 'users.email', 'loans.amount', 'loans.duration', 'loans.instalment',
+                                'loans.status', 'loans.file_nik', 'loans.file_profesi', 'loans.file_pembiayaan',
+                                'loans.file_foto_usaha', 'loans.file_skt', 'loans.file_sku', 'loans.id', 'loans.user_id')
+                        ->join('users', 'users.id', '=', 'loans.user_id')
+                        ->orderBy('loans.status', 'ASC')
+                        ->orderBy('loans.created_at', 'DESC')
+                        ->get();
+            $refund_loan = DB::table('loan_bills')
+                        ->select('loan_bills.invoice', 'loan_bills.invoice_date', 'loan_bills.due_date', 'loan_bills.total',
+                                'loan_bills.full_name', 'loan_bills.phone', 'loan_bills.email', 'loan_bills.payment_method',
+                                'loan_bills.ammount', 'loan_bills.payment_proof', 'loan_bills.status', 'loans.instalment',
+                                'loan_bills.id', 'loan_bills.user_id', 'loan_bills.loan_id', 'loan_bills.status_cicilan',
+                                'loan_bills.status_pinjaman','loan_bills.created_at')
+                        ->join('users', 'users.id', '=', 'loan_bills.user_id')
+                        ->join('loans', 'loans.id', '=', 'loan_bills.loan_id')
+                        ->where('loan_bills.'.$kategori, 'like', "%". $keyword . "%")
+                        ->orderBy('loan_bills.created_at', 'DESC')
+                        ->orderBy('loan_bills.status_pinjaman', 'ASC')                        
+                        ->get();
+
+            return view('approve.adminapprove', [
+                "approve_loan" => $approve_loan,
+                "refund_loan" => $refund_loan,
+            ]);    
+        }
+        
     }
 
     public function update(Request $request){

@@ -221,72 +221,6 @@
                         <a class="navbar-brand" href="{{ url('/') }}">GIATKAYA</a>
 
                     </div>
-                </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="sidebar">
-          <ul class="nav nav-sidebar">
-          <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">MENU</a>
-          <a class="list-group-item list-group-item-action list-group-item-light p-3" href=""><i class="fa fa-dashboard me-2"></i>&nbsp; Dashboard</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3"                     
-                    href="{{ route('masyarakat.training.index') }}"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
-
-                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
-
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-                    href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-                    href=""><i class="fas fa-regular fa-user me-2"></i>&nbsp; Profile
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" 
-
-                    href="{{ route('masyarakat.certificate.index') }}"><i class="fas fa-regular fa-file-lines me-2"></i>&nbsp; Certification
-                </a>
-          </ul>
-          <ul class="nav nav-sidebar">
-          <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">OTHER</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
-                    <i class="fas fa-regular fa-address-card me-2"></i>&nbsp; About Us
-                </a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
-                    <i class="fas fa-regular fa-gear me-2"></i>&nbsp; Setting
-                </a>
-
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt me-2"></i>&nbsp; Logout            
-                </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-          </ul>
-        </div>
-        @yield('content')
-        
-      </div>
-    </div>
-    @elseif (auth()->user()->status == '2')
-    <div class="container">
-        <div class="row" align="center">
-            <div class="col-md-12">
-                <div class="panel panel-default justify-content-center">
-                    <div class="panel-heading fw-bold">
-                        <strong>Pendaftaran Akun Di Tolak</strong>
-                    </div>
-                    <div class="panel-body">
-                        Akun yang di daftarkan tidak memenuhi syarat. 
-                        <br>Pastikan daftar dengan persyaratan yang tersedia. Terima Kasih
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -301,9 +235,9 @@
                                 </a>
                             </li>
                         </ul>
-                        <form class="navbar-form navbar-right">
+                        <!-- <form class="navbar-form navbar-right">
                             <input type="text" class="form-control" placeholder="Search...">
-                        </form>
+                        </form> -->
                         @if (Request::is('masyarakat/peminjaman*') || Request::is('masyarakat/pengembalian*'))
                         <ul class="nav navbar-nav navbar-right navbar-button">
                             <li>
