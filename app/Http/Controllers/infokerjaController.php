@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\InfoKerja;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 
 class infokerjaController extends Controller
 {
@@ -15,7 +16,11 @@ class infokerjaController extends Controller
      */
     public function index()
     {
-        $datas = InfoKerja::all();
+        $datas = DB::table('infokerja')
+                ->select('infokerja.id', 'infokerja.name_perusahaan', 'infokerja.foto', 'infokerja.gaji', 'infokerja.lokasi',
+                        'infokerja.jabatan', 'infokerja.created_at', \DB::raw('SUBSTRING(infokerja.deskripsi, 1, 200) as deskripsi_singkat'))            
+                ->orderBy('infokerja.name_perusahaan', 'ASC')
+                ->get();          
 
         return view('infokerja.index', compact('datas'));
     }

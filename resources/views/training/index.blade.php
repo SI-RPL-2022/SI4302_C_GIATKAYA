@@ -1,10 +1,9 @@
 @extends('layouts.dashboard')
 @section('title','Training Skill')
 @section('content')
-<div class="panel panel-default">
-    <h2 class="text-center" style="margin-bottom: 20px;">Training Skill</h2>
+<div>
+    <h2 class="text-center">Training Skill</h2>
 </div>
-
 <div class="p-3">
 <form action="/training/search/{id}" method="post" enctype="multipart/form-data">
     @csrf 

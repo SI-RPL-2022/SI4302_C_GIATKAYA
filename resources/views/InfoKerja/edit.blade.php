@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             <label for="first_name">Deskripsi Lowongan</label>
-            <input type="text" class="form-control form" name="deskripsi" value="{{ $model->deskripsi }}">
+            <textarea name="deskripsi" class="form-control form" id="editor">{{ $model->deskripsi }}</textarea>                        
         </div>
         <div class="form-group">
             <label for="last_name">Lokasi</label>
@@ -36,4 +36,12 @@
             <button type="submit" class="btn btn-info">Edit</button>
             <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
     </form>
+<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection
