@@ -219,6 +219,7 @@
                         <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
 
                     </div>
+
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -313,6 +314,10 @@
                     <div class="panel-body">
                         Akun yang di daftarkan tidak memenuhi syarat. 
                         <br>Pastikan daftar dengan persyaratan yang tersedia. Terima Kasih
+<<<<<<< HEAD
+=======
+>>>>>>> origin/nau_sprint3
+>>>>>>> 3e6d0e65e8905f3295391e052411eaf7399dd0e1
                     </div>
                     <img src="{{asset ('image/silang.png')}}" width="25%" alt="">
                     <br>
