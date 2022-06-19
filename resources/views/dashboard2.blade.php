@@ -210,7 +210,7 @@
           <a class="navbar-brand" href="{{ url('/') }}">GIATKAYA</a>
 
         </div>
-        <!-- <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="#">
@@ -218,7 +218,7 @@
 
                         <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
 
-                    </div> -->
+                    </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>

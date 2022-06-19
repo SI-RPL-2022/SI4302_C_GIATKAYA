@@ -256,7 +256,15 @@
                     href="/masyarakat/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                
+<<<<<<< HEAD
+<<<<<<< HEAD
                     href="/masyarakat/peminjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+=======
+                    href="/pinjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+>>>>>>> nau_sprint3
+=======
+                    href="/masyarakat/peminjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+>>>>>>> 3e6d0e65e8905f3295391e052411eaf7399dd0e1
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
