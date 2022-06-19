@@ -188,139 +188,7 @@
         }
         #someId .thumbnail{
     display: inline-flex;
-        }
-        body{
-            margin-top:20px;
-            color: #1a202c;
-            text-align: left;    
-        }
-        .main-body {
-            padding: 15px;
-        }
-        .card {
-            box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
-        }
-
-        .card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            word-wrap: break-word;
-            background-color: #fff;
-            background-clip: border-box;
-            border: 0 solid rgba(0,0,0,.125);
-            border-radius: .25rem;
-        }
-
-        .card-body {
-            flex: 1 1 auto;
-            min-height: 1px;
-            padding: 1rem;
-        }
-
-        .gutters-sm {
-            margin-right: -8px;
-            margin-left: -8px;
-        }
-
-        .gutters-sm>.col, .gutters-sm>[class*=col-] {
-            padding-right: 8px;
-            padding-left: 8px;
-        }
-        .mb-3, .my-3 {
-            margin-bottom: 1rem!important;
-        }
-
-        .bg-gray-300 {
-            background-color: #e2e8f0;
-        }
-        .h-100 {
-            height: 100%!important;
-        }
-        .shadow-none {
-            box-shadow: none!important;
-        }
-        .rounded-input button {
-            border-radius: 42px 0px 0px 42px;
-            border-right: none;
-        }
-
-        .rounded-input button i {
-            font-size: 24sp;
-        }
-
-        .rounded-input input {
-            border-radius: 0px 42px 42px 0px;
-            border-left: none;
-        }
-
-        .border-bottom-unset {
-            border-bottom: unset;
-        }
-
-        .fw-bolder {
-            font-weight: bolder;
-        }
-
-        .cert-panel {
-            border-radius: 20px;
-            border: 1px solid #31A8CD;
-            box-shadow: 0 4px 8px 1px #31A8CD;
-        }
-
-        .cert-panel .panel-heading {
-            padding: unset;
-            border-radius: 20px 20px 0px 0px;
-        }
-
-        .cert-panel .panel-footer {
-            border-radius: 0px 0px 20px 20px;
-            background-color: unset;
-            border-top: unset;
-        }
-
-        .pdf {
-            max-width: 100% !important;
-            height: auto !important;
-            border-radius: 20px 20px 0px 0px;
-        }
-
-        .cert-title {
-            font-weight: bolder;
-            font-size: 16px;
-            margin-bottom: 3px;
-        }
-
-        .cert-subtitle {
-            font-size: 16px;
-            color: #31A8CD;
-            margin-bottom: 15px;
-        }
-
-        .cert-description {
-            font-size: 16px;
-            font-weight: bolder;
-            color: black;
-            opacity: 0.5;
-        }
-
-        .cert-button {
-            font-size: 14px;
-            font-weight: bolder;
-            color: white;
-            background-color: #31A8CD;
-            border: 1px solid black;
-            border-radius: 10px;
-            /* width: 200px; */
-        }
-
-        .mb-3 {
-            margin-bottom: 30px;
-        }
-        .panel{
-            box-shadow: 2px 2px 2px rgba(17, 205, 239), 0 1px 2px rgba(17, 205, 239);
-        }
+}
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -368,7 +236,7 @@
                     href="/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
-                    href="/approve"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal <i class=""></i>
+                    href=""><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal <i class=""></i>
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href="/infokerja"><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja
@@ -388,7 +256,11 @@
                     href="/masyarakat/training"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                
+<<<<<<< HEAD
                     href="/masyarakat/peminjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+=======
+                    href="/pinjaman"><i class="fas fa-regular fa-coins me-2"></i>&nbsp; Pinjaman Modal 
+>>>>>>> nau_sprint3
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" 
                     href=""><i class="fas fa-regular fa-briefcase me-2"></i>&nbsp; Lapangan Kerja

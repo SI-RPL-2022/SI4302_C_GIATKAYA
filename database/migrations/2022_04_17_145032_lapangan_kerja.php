@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_perusahaan',255);
             $table->string('foto');
-            $table->string('deskripsi',255);
+            $table->text('deskripsi');
             $table->string('lokasi',255);
             $table->string('jabatan')->nullable();
             $table->string('gaji');
