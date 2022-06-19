@@ -210,7 +210,7 @@
           <a class="navbar-brand" href="{{ url('/') }}">GIATKAYA</a>
 
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <!-- <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="#">
@@ -218,8 +218,7 @@
 
                         <img src="{{ asset('image/'.Auth::user()->foto_profil) }}" alt="" height="18" class="rounded-circle me-1"><small class="text-muted">{{ Auth::user()->name }}</small>
 
-                    </div>
-<<<<<<< HEAD
+                    </div> -->
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -245,13 +244,12 @@
                             </li>
                         </ul>
                         @endif
-=======
                 </a>
             </li>
           </ul>
-          <form class="navbar-form navbar-right">
+          <!-- <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
@@ -263,7 +261,7 @@
           <a class="list-group-item list-group-item-lights mt-2 fw-bold" style="background-color: #11CDEF; color: white">MENU</a>
           <a class="list-group-item list-group-item-action list-group-item-light p-3" href=""><i class="fa fa-dashboard me-2"></i>&nbsp; Dashboard</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                     
-                    href="{{ route('masyarakat.training.index') }}"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
+                    href="#"><i class="fa-solid fa-book-open-reader me-2"></i>&nbsp; Training Skill
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"                 
 
@@ -315,7 +313,6 @@
                     <div class="panel-body">
                         Akun yang di daftarkan tidak memenuhi syarat. 
                         <br>Pastikan daftar dengan persyaratan yang tersedia. Terima Kasih
->>>>>>> origin/nau_sprint3
                     </div>
                     <img src="{{asset ('image/silang.png')}}" width="25%" alt="">
                     <br>
