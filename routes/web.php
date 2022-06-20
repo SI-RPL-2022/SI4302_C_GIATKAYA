@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdmController;
+use App\Http\Controllers\ApproveAdminController;
+use App\Http\Controllers\LoanController;
+use App\Http\Controllers\LoanBillController;
 use App\Http\Controllers\CertificateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -12,6 +15,8 @@ use App\Http\Controllers\BuatSertifController;
 use App\Models\Training;
 
 use App\Http\Controllers\infokerjaController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +30,7 @@ use App\Http\Controllers\infokerjaController;
 */
 
 Route::get('/', function () {
-    $datas = Training::paginate(4);
-    return view('welcome', compact('datas'));
+    return view('welcome');
 });
 
 
@@ -76,9 +80,11 @@ Route::get('training/edit/{id}', [App\Http\Controllers\TrainingController::class
 Route::post('training/update/{id}', [App\Http\Controllers\TrainingController::class, 'update']);
 Route::get('training/delete/{id}', [App\Http\Controllers\TrainingController::class, 'destroy']);
 Route::post('/training/search/{id}', [TrainingController::class, 'search'])->name('searching');
+Route::post('masyarakat/training', [TrainingController::class, 'status'])->name('status');
 
 // Route Training Masyarakat
-Route::get('masyarakat/training', [App\Http\Controllers\UserTrainingController::class, 'index']);
+Route::get('masyarakat/training', [App\Http\Controllers\UserTrainingController::class, 'index'])->name('masyarakat.training.index');
+Route::post('masyarakat/training/search/{id}', [App\Http\Controllers\UserTrainingController::class, 'search'])->name('masyarakat.training.searching');
 Route::get('masyarakat/training/{id}', [App\Http\Controllers\UserTrainingController::class, 'show']);
 Route::post('masyarakat/training/{id}/store', [App\Http\Controllers\UserTrainingController::class, 'store']);
 Route::get('masyarakat/training/{id}/detail', [App\Http\Controllers\UserTrainingController::class, 'detail']);
@@ -104,6 +110,7 @@ Route::get('/aksesdata/edit-password/{id}', [App\Http\Controllers\DataUserContro
 Route::post('/aksesdata/update-password/{id}', [App\Http\Controllers\DataUserController::class, 'updatePasswordProfile']);
 Route::post('/aksesdata/search/{id}', [App\Http\Controllers\DataUserController::class, 'search'])->name('searching');
 
+
 //Routes Mmebuat Sertifikat
 Route::get('BuatSertif', [App\Http\Controllers\BuatSertifController::class, 'index']);
 Route::get('BuatSertif/create', [App\Http\Controllers\BuatSertifController::class, 'create']);
@@ -114,9 +121,10 @@ Route::get('BuatSertif/delete/{id}', [App\Http\Controllers\BuatSertifController:
 Route::post('/BuatSertif/search/{id}', [BuatSertifController::class, 'search'])->name('searching');
 
 //Routes Pengembalian Pinjaman
-// Route::get('masyarakat/pinjaman', [App\Http\Controllers\PengembalianController::class, 'index']);
-// Route::get('/pinjaman/form/{id}', [App\Http\Controllers\PengembalianController::class, 'edit']);
-// Route::post('/pinjaman/detail/{id}', [App\Http\Controllers\PengembalianController::class, 'update']);
+Route::get('masyarakat/pinjaman', [App\Http\Controllers\PengembalianController::class, 'index']);
+
+Route::get('/pinjaman/form/{id}', [App\Http\Controllers\PengembalianController::class, 'edit']);
+Route::post('/pinjaman/detail/{id}', [App\Http\Controllers\PengembalianController::class, 'update']);
 
 Route::get('masyarakat/peminjaman', [LoanController::class, 'index'])->name('masyarakat.loan.index')->middleware('is_masyarakat');
 Route::get('masyarakat/peminjaman/create', [LoanController::class, 'create'])->name('masyarakat.loan.create')->middleware('is_masyarakat');
@@ -135,8 +143,8 @@ Route::post('/approve/loan-bill/approve-success/{id}', [App\Http\Controllers\App
 Route::post('/approve/loan-bill/approve-failed/{id}', [App\Http\Controllers\ApproveAdminController::class, 'approveLoanBillFailed'])->middleware('is_admin');
 Route::post('/approve/loan-bill/beri-keterangan/{id}', [App\Http\Controllers\ApproveAdminController::class, 'beriKeteranganLoanBill'])->middleware('is_admin');
 Route::post('/approve/loan-bill/validasi-lunas/{id}', [App\Http\Controllers\ApproveAdminController::class, 'validasiLunasLoanBill'])->middleware('is_admin');
-Route::post('/approve/update', [App\Http\Controllers\ApproveAdminController::class, 'update'])->name('update_sts')->middleware('is_admin');
-Route::get('/approve/search/', [App\Http\Controllers\ApproveAdminController::class, 'search'])->name('searching')->middleware('is_admin');
+Route::post('/approve/update', [App\Http\Controllers\ApproveAdminController::class, 'update'])->name('update_status')->middleware('is_admin');
+Route::get('/approve/search/{id}', [App\Http\Controllers\ApproveAdminController::class, 'search'])->name('searching')->middleware('is_admin');
 //tab Pinjaman admin
 // Route::get('/tab1', function(){
 //     return view('approve.adminapprove');
@@ -157,3 +165,9 @@ Route::get('/data-riyawat-lamaran', [App\Http\Controllers\LapanganKerjaControlle
 Route::get('/data-riyawat-lamaran/cari', [App\Http\Controllers\LapanganKerjaController::class, 'caridataRiwayatLamaran'])->middleware('is_admin');
 Route::get('/data-riyawat-lamaran/delete/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'deletedataRiwayatLamaran'])->middleware('is_admin');
 Route::get('/data-riyawat-lamaran/download/{id}', [App\Http\Controllers\LapanganKerjaController::class, 'downloaddataRiwayatLamaran'])->middleware('is_admin');
+
+Route::get('/', function () {
+    $datas = Training::paginate(4);
+    return view('welcome', compact('datas'));
+    return view('welcome');
+});
